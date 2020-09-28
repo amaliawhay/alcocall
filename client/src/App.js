@@ -6,6 +6,7 @@ import signIn from "./pages/signIn/index";
 import recipes from "./pages/recipes/index";
 import bars from "./pages/bars/index";
 import breweries from "./pages/breweries/index";
+import Footer from "./component/footer/footer";
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
         <Route exact path="/bars" component={bars} />
         <Route path="/breweries" component={breweries} />
         <Route path="/recipes" component={recipes} />
+
+        <Footer />
       </div>
     </Router>
   );
