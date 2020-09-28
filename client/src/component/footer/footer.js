@@ -24,7 +24,7 @@ function footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link className="footer-a" to="recipes">
+                  <Link className="footer-a" to="recipes" alt="">
                     Recipes
                   </Link>
                 </li>

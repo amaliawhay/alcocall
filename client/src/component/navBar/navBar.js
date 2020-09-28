@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Icons } from "react-materialize";
+// import { Icons } from "react-materialize";
 
 function Navbar() {
   return (
