@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { Icons } from "react-materialize";
+import { Icon, Navbar, NavItem } from "react-materialize";
 
-function Navbar() {
+function Navbar1() {
   return (
     <div>
-      <nav className="nav-wrapper black darken-1 z-depth-2 nav-bar">
-        <div className="container">
+      <Navbar
+        className="nav-wrapper black darken-1 z-depth-2 nav-bar"
+        alignLinks="right"
+        brand={
           <Link to="index" className="">
             <img
               className="brand-logo"
@@ -14,56 +16,27 @@ function Navbar() {
               alt="Alcocall Logo"
             />
           </Link>
-          <Link to="#" className="sidenav-trigger" data-target="mobile-links">
-            <i className="material-icons">menu</i>
-          </Link>
-          <ul
-            className="right hide-on-med-and-down"
-            // style="font-family: BenchNine, sans-serif;"
-            style={{ fontFamily: "BenchNine, sansSerif" }}
-          >
-            <li>
-              <Link to="recipes" className="btn:hover">
-                Recipes
-              </Link>
-            </li>
-            <li>
-              <Link to="bars">Bars</Link>
-            </li>
-            <li>
-              <Link to="breweries">Breweries</Link>
-            </li>
-            <li>
-              <Link
-                to=""
-                className="btn-floating light-blue darken-1 zed-depth-0"
-                alt="Login"
-              >
-                <i className="material-icons">person</i>
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <ul className="sidenav white darken-2" id="mobile-links">
-        <li>
-          <Link to="index">Home</Link>
-        </li>
-        <li>
-          <Link to="recipes">Recipes</Link>
-        </li>
-        <li>
-          <Link to="bars">Bars</Link>
-        </li>
-        <li>
-          <Link to="breweries">Breweries</Link>
-        </li>
-        <li>
-          <Link to="/">Login</Link>
-        </li>
-      </ul>
+        }
+        id="mobile-nav"
+        menuIcon={<Icon>menu</Icon>}
+        options={{
+          draggable: true,
+          edge: "left",
+          inDuration: 250,
+          onCloseEnd: null,
+          onCloseStart: null,
+          onOpenEnd: null,
+          onOpenStart: null,
+          outDuration: 200,
+          preventScrolling: true
+        }}
+      >
+        <NavItem href="recipes">Recipes</NavItem>
+        <NavItem href="breweries">Breweries</NavItem>
+        <NavItem href="bars">Bars</NavItem>
+      </Navbar>
     </div>
   );
 }
 
-export default Navbar;
+export default Navbar1;

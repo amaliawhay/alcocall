@@ -39,7 +39,7 @@ function footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link className="footer-a" to="referneces">
+                  <Link className="footer-a" to="references">
                     Resources
                   </Link>
                 </li>

@@ -1,150 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import breweryCard from "../../component/breweryCard";
+import Jumbo from "../../component/carousel/index";
+import Container from "../../component/container/container";
+import BreweryCard from "../../component/breweryCard/index";
+import RandomCard from "../../component/randomCard/index";
 
 function home() {
   return (
     <div>
-      <ul className="sidenav white darken-2" id="mobile-links">
-        <li>
-          <Link to="index">Home</Link>
-        </li>
-        <li>
-          <Link to="liquor_search">Recipes</Link>
-        </li>
-        <li>
-          <Link to="bars">Bars</Link>
-        </li>
-        <li>
-          <Link to="beerSearch">Breweries</Link>
-        </li>
-        <li>
-          <Link to="login">Login</Link>
-        </li>
-      </ul>
-
-      <div className="carousel-containter">
-        <div className="carousel carousel-slider">
-          <Link className="carousel-item" to="#one!">
-            <img
-              src="/assets/images/main_image_slider.png"
-              className="responsive-img"
-              alt="slider"
-            />
-          </Link>
-          <Link className="carousel-item" to="#two!">
-            <img src="/assets/images/main_image_slider-2.jpg" alt="slider" />
-          </Link>
-          <Link className="carousel-item" to="#three!">
-            <img src="/assets/images/main_image_slider-3.jpg" alt="slider" />
-          </Link>
-        </div>
-      </div>
+      <Jumbo />
+      <Container />
 
       <main className="wide-container container">
         <div className="row">
-          <div className="col s12">
-            <section className="main-text-section">
-              <h5
-                className="center-align light-blue-text text-darken-1"
-                style={{ fontFamily: "BenchNine, serif" }}
-              >
-                USE WHAT YOU'VE GOT!
-              </h5>
-              <p
-                className="flow-text center-align"
-                style={{ fontFamily: "BenchNine, serif" }}
-              >
-                Tired of your 'Usual?'
-              </p>
-              <p
-                className="flow-text center-align"
-                style={{ fontFamily: "BenchNine, serif" }}
-              >
-                Need a new watering hole or dive bar to get sloshed?
-              </p>
-              <p
-                className="flow-text center-align"
-                style={{ fontFamily: "BenchNine, serif" }}
-              >
-                Really need to find the hippest new craft brewery for your next
-                Tinder date?
-              </p>
-              <p
-                className="flow-text center-align"
-                style={{ fontFamily: "BenchNine, serif" }}
-              >
-                DID YOU GET YOU TINDER DATE HOME FOR A NIGHTCAP AND NOW YOU
-                DON'T KNOW WHAT TO DO???
-              </p>
-              <p
-                className="flow-text center-align"
-                style={{ fontFamily: "BenchNine, serif" }}
-              >
-                We got you.
-              </p>
-            </section>
-          </div>
-        </div>
+          <BreweryCard />
+          <RandomCard />
 
-        <div className="row">
-          <div className="col s12 l4">
-            <div className="card">
-              <div className="card-image">
-                <img
-                  src="/assets/images/sal-gh-BV5YkMpFlj4-unsplash.jpg"
-                  alt="Flight of craft beers"
-                />
-                <Link
-                  to=""
-                  className="halfway-fab btn-floating light-blue darken-1 pulse"
-                >
-                  <i className="large material-icons">local_drink</i>
-                </Link>
-              </div>
-              <div className="card-content">
-                <span className="card-title light-blue-text text-darken-1">
-                  Brewery Search
-                </span>
-                <p>
-                  Craft Breweries are a trend to some, and a lifestyle for
-                  others. Find all your local breweries and tasting rooms for
-                  the next time you need a local hazy, juicy, double IPA.
-                </p>
-              </div>
-              <div className="card-action center-align">
-                <Link className="btn light-blue darken-1" to="beerSearch">
-                  Find a local brewery
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="col s12 l4">
-            <div className="card">
-              <div className="card-image">
-                <img
-                  src="/assets/images/jenna-bollweg-5Ufq_E6PCz0-unsplash.jpg"
-                  alt="Mai Tai mixed drink"
-                />
-                <Link
-                  to=""
-                  className="halfway-fab btn-floating light-blue darken-1 pulse"
-                >
-                  <i className="material-icons">whatshot</i>
-                </Link>
-              </div>
-              <div className="card-content">
-                <span className="card-title light-blue-text text-darken-1">
-                  Random Drink
-                </span>
-                <p>Not sure what you want to drink? Take a chance on me!</p>
-              </div>
-              <div className="card-action center-align">
-                <Link className="btn light-blue darken-1" to="random">
-                  Surprise Me!
-                </Link>
-              </div>
-            </div>
-          </div>
           <div className="col s12 l4">
             <div className="card">
               <div className="card-image">
@@ -153,7 +25,7 @@ function home() {
                   alt="Bartender mixing cosmopolitans"
                 />
                 <Link
-                  to=""
+                  to="bars"
                   className="halfway-fab btn-floating light-blue darken-1 pulse"
                 >
                   <i className="material-icons">local_bar</i>
