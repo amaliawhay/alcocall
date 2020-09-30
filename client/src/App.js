@@ -8,7 +8,6 @@ import recipes from "./pages/recipes/index";
 import bars from "./pages/bars/index";
 import breweries from "./pages/breweries/index";
 import Footer from "./component/footer/footer";
-import "./component/style/style.css";
 
 function App() {
   return (
