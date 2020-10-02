@@ -1,6 +1,7 @@
 //Dependencies
 var compression = require("compression");
 var express = require("express");
+require("dotenv").config();
 
 var PORT = process.env.PORT || 8000;
 
@@ -13,9 +14,9 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Import routes and give the server access to them.
-var routes = require("./controllers/controller.js");
+//var routes = require("./controllers/controller.js");
 
-app.use(routes);
+//app.use(routes);
 
 app.listen(PORT, function () {
   console.log("App now listening at localhost:" + PORT);

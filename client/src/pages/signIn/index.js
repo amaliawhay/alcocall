@@ -1,9 +1,9 @@
 import React from "react";
 
-function signin() {
+function singin() {
   return (
     <div>
-      <h1>signin</h1>
+      <h1>Sign In</h1>
     </div>
   );
 }
