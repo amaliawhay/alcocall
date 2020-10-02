@@ -1,14 +1,4 @@
-import API from "../utils/API";
 import React, { Component } from "react";
-
-
-class Recipes extends Component {
-  state = {
-    search: "",
-    Drinks: [],
-    results: [],
-    error: ""
-  };
 
 function recipes() {
   return (
