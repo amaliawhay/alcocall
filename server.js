@@ -3,7 +3,7 @@ var compression = require("compression");
 var express = require("express");
 require("dotenv").config();
 
-var PORT = process.env.PORT || 8000;
+var PORT = process.env.PORT || 3000;
 
 var app = express();
 
