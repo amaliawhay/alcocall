@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/Api";
-import SearchForm from "../../component/searchForm/searchForm";
+import { Row, Col, Card } from "react-materialize";
 import TextInput from "../../component/textInput/textInput";
-import Collapsible from "../../component/collapsible/collapsible";
 import NonalcoholicButton from "../../component/nonalcoholicButton/nonalcoholicButton";
 import RumButton from "../../component/rumButton/rumButton";
 import TequillaButton from "../../component/tequillaButton/tequillaButton";
@@ -13,17 +12,27 @@ import DrinkCard from "../../component/drinkCard/drinkCard";
 
 class recipes extends Component {
   state = {
-    result: {},
-    search: ""
+    result: [],
+    search: "",
+    drinkName: []
   };
-  //   componentDidMount() {
-  //     this.searchIngredients("lemon");
-  //   }
+
+  // componentDidMount() {
+  //   this.searchIngredients("lemon");
+  // }
   searchIngredients = (query) => {
     API.getIngs(query)
       .then((res) => {
-        // console.log(res.data.drinks);
-        this.setState({ result: res.data.drinks });
+        const data = res.data.drinks;
+        console.log(data);
+        this.setState({ ...this.state, result: data });
+        const tempDrinkName = [];
+        for (var i = 0; i < data.length; i++) {
+          tempDrinkName.push({ name: data[i].strDrink, id: data[i].idDrink });
+        }
+        // return tempDrinkName;
+        this.setState({ ...this.state, drinkName: tempDrinkName });
+        console.log(this.state.drinkName);
         console.log(this.state.result);
       })
       .catch((err) => console.log(err));
@@ -39,6 +48,10 @@ class recipes extends Component {
     event.preventDefault();
     this.searchIngredients(this.state.search);
   };
+  handleButtonClick = (event) => {
+    event.preventDefault();
+  };
+
   render() {
     return (
       <div>
@@ -75,11 +88,41 @@ class recipes extends Component {
                 </div>
               </div>
             </div>
-            {/* <Collapsible />
-            <TextInput />
-            <DrinkCard /> */}
+            <Row>
+              <Col>
+                <TextInput
+                  className="center-align"
+                  s={12}
+                  value={this.state.search}
+                  handleInputChange={this.handleInputChange}
+                  handleFormSubmit={this.handleFormSubmit}
+                />
+              </Col>
+            </Row>
+            {this.state.result.strDrink ? (
+              <DrinkCard
+                recipe={this.state.result.idDrink}
+                image={this.state.result.strDrinkThumb}
+                title={this.state.result.strDrink}
+              />
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
           </div>
-          <div id="alcoholDisplay" className="col s10 m6 16"></div>
+          <Card s={12}>
+            {this.state.drinkName.map((drink) => {
+              return (
+                <button
+                  onClick={this.setState(this.searchIngredients(this.value))}
+                  value={drink.id}
+                >
+                  {drink.name}
+                </button>
+              );
+            })}
+            {/* <p>{this.state.drinkName || "search for ingredient"}</p> */}
+          </Card>
+          {/* <div id="alcoholDisplay" className="col s10 m6 16"></div>
           <div class="row">
             <form>
               <label for="drinkSelect"></label>
@@ -92,7 +135,7 @@ class recipes extends Component {
                 </select>
               </div>
             </form>
-          </div>
+          </div> */}
         </main>
       </div>
       //       <div>

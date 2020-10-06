@@ -9,14 +9,14 @@ function singin() {
           <a
             className="dropdown-item btn light-blue darken-1 button"
             id="signIn"
-            href="#"
+            href="/"
           >
             Sign in
           </a>
           <a
             className="dropdown-item btn light-blue darken-1 button"
             id="signUp"
-            href="#"
+            href="/"
           >
             Sign up
           </a>
