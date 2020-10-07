@@ -13,8 +13,17 @@ export default {
   },
   getIngs: function (ing) {
     return axios.get(
-      `https://www.thecocktaildb.com/api/json/${process.env.REACT_APP_COCKTAILS_API_KEY}/filter.php?i=` +
-        ing
+      `https://www.thecocktaildb.com/api/json/${process.env.REACT_APP_COCKTAILS_API_KEY}/filter.php?i=${ing}`
+    );
+  },
+  getId: function (id) {
+    return axios.get(
+      "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + id
+    );
+  },
+  getRecipe: function (id) {
+    return axios.get(
+      "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + id
     );
   }
 };
