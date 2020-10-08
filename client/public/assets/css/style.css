@@ -1,9 +1,10 @@
 /* Classes ------------------------- */
+@import url('https://fonts.googleapis.com/css?family=BenchNine&display=swap');
 
-.body {
+body {
   margin: 0;
   padding: 0;
-  font-family: BenchNine, sans-serif;
+  font-family: 'Titillium Web', sans-serif;
 }
 
 .nav-bar {
