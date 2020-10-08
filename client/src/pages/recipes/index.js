@@ -11,11 +11,16 @@ import GinButton from "../../component/ginButton/ginButton";
 import DrinkCard from "../../component/drinkCard/drinkCard";
 
 class recipes extends Component {
-  state = {
-    result: [],
-    search: "",
-    drinkName: []
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      result: [],
+      search: "",
+      drinkName: [],
+      drinkInfo: {},
+      drinkRecipe: {}
+    };
+  }
 
   // componentDidMount() {
   //   this.searchIngredients("lemon");
@@ -32,21 +37,41 @@ class recipes extends Component {
         }
         // return tempDrinkName;
         this.setState({ ...this.state, drinkName: tempDrinkName });
-        console.log(this.state.drinkName);
-        console.log(this.state.result);
+      })
+      .catch((err) => console.log(err));
+  };
+  specificDrink = (query) => {
+    API.getId(query)
+      .then((res) => {
+        console.log(res.data.drinks[0]);
+        this.setState({ ...this.state, drinkInfo: res.data.drinks[0] });
+      })
+      .catch((err) => console.log(err));
+  };
+
+  getRecipe = (query) => {
+    API.getRecipe(query)
+      .then((res) => {
+        console.log(res);
+        const data = res.data.drinks;
+        console.log(data);
+        this.setState({ ...this.state, drinkRecipe: data });
       })
       .catch((err) => console.log(err));
   };
   handleInputChange = (event) => {
     const value = event.target.value;
-    const name = event.target.name;
+
+    console.log(event.target);
     this.setState({
-      [name]: value
+      ...this.state,
+      search: value
     });
   };
   handleFormSubmit = (event) => {
     event.preventDefault();
     this.searchIngredients(this.state.search);
+    console.log(event.target.value);
   };
   handleButtonClick = (event) => {
     event.preventDefault();
@@ -99,11 +124,11 @@ class recipes extends Component {
                 />
               </Col>
             </Row>
-            {this.state.result.strDrink ? (
+            {this.state.drinkInfo.strDrink ? (
               <DrinkCard
-                recipe={this.state.result.idDrink}
-                image={this.state.result.strDrinkThumb}
-                title={this.state.result.strDrink}
+                recipe={this.state.drinkInfo.strInstructions}
+                image={this.state.drinkInfo.strDrinkThumb}
+                title={this.state.drinkInfo.strDrink}
               />
             ) : (
               <h3>No Results to Display</h3>
@@ -113,8 +138,8 @@ class recipes extends Component {
             {this.state.drinkName.map((drink) => {
               return (
                 <button
-                  onClick={this.setState(this.searchIngredients(this.value))}
-                  value={drink.id}
+                  onClick={() => this.setState(this.specificDrink(drink.id))}
+                  // value={drink.id}
                 >
                   {drink.name}
                 </button>

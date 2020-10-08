@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "react-materialize";
 
-function TequillaButton() {
+function TequillaButton(props) {
   return (
     <div>
       <Button
