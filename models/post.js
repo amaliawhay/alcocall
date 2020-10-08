@@ -2,9 +2,19 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const postSchema = new Schema({
-  title: { type: String, required: true },
-  author: { type: String, required: true },
-  body: String,
+  userName: {
+    type: String,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true,
+    validate: [
+      ({ length }) => length >= 6,
+      "Password must be at least 6 characters long",
+    ],
+  },
+  age: type,
   date: { type: Date, default: Date.now },
 });
 
