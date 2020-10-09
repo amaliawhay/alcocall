@@ -19,6 +19,7 @@ function Tutorial() {
             <CardTitle>
               <div className="iframe-container">
                 <iframe
+                  title="tutorial"
                   className="responsive-iframe"
                   width="100%"
                   height="100%"

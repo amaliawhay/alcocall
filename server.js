@@ -1,23 +1,32 @@
 //Dependencies
-var compression = require("compression");
-var express = require("express");
+const compression = require("compression");
+const express = require("express");
+const mongoose = require("mongoose");
+const routes = require("./routes");
+
+const PORT = process.env.PORT || 3001;
+
+const app = express();
+
 require("dotenv").config();
 
-var PORT = process.env.PORT || 3001;
-
-var app = express();
-
 app.use(compression());
-app.use(express.static("public"));
 
-// Parse request body as JSON
+// Middlewares defined here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// Import routes and give the server access to them.
-var routes = require("./controllers/controller.js");
+// Serve static assets (Heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
+//Routes
 app.use(routes);
 
+// Connect to MongoDB
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/");
+
+//Start server
 app.listen(PORT, function () {
-  console.log("App now listening at localhost:" + PORT);
+  console.log(`App now listening at localhost: ${PORT}`);
 });
