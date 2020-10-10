@@ -19,8 +19,4 @@ function Button({ type = "default", className, children, onClick }) {
 }
 
 export default Button;
-{
-  /* <Button onClick={handleFormSubmit} type="success" className="input-lg">
-  Search
-</Button>; */
-}
+

@@ -13,14 +13,31 @@ class Recipes extends Component {
       search: "",
       drinkName: [],
       drinkInfo: {},
-      drinkRecipe: {}
+      drinkIng: {},
+      drinkMeasurment: {}
     };
   }
 
   searchRandom = () =>  {
     API.getRandom().then((res) => {
+      var ing = [];
+      
       console.log(res.data.drinks[0]);
-        this.setState({ ...this.state, drinkInfo: res.data.drinks[0] });
+      for (let i = 1; i < 16; i++){
+        if (res.data.drinks[0]['strIngredient' + [i]] === null && res.data.drinks[0]['strMeasure' + [i]] === null) {
+        }else if (res.data.drinks[0]['strMeasure' + [i]] === null){
+          ing.push(res.data.drinks[0]['strIngredient' + [i]]);
+        }
+        
+        else {
+          ing.push(res.data.drinks[0]['strMeasure' + [i]]  + " " + res.data.drinks[0]['strIngredient' + [i]]);
+          
+
+        }
+      }
+      console.log(ing);
+
+      this.setState({ ...this.state, drinkInfo: res.data.drinks[0], drinkIng: ing });
       
     })
     .catch((err) => console.log(err));
@@ -43,12 +60,29 @@ class Recipes extends Component {
   specificDrink = (query) => {
     API.getId(query)
       .then((res) => {
+        var ing = [];
+        
         console.log(res.data.drinks[0]);
-        this.setState({ ...this.state, drinkInfo: res.data.drinks[0] });
+        for (let i = 1; i < 16; i++){
+          if (res.data.drinks[0]['strIngredient' + [i]] === null && res.data.drinks[0]['strMeasure' + [i]] === null) {
+          }else if (res.data.drinks[0]['strMeasure' + [i]] === null){
+
+          }
+          
+          else {
+            ing.push(res.data.drinks[0]['strMeasure' + [i]] +  " " + res.data.drinks[0]['strIngredient' + [i]]);
+            
+
+          }
+        }
+        console.log(ing);
+
+        this.setState({ ...this.state, drinkInfo: res.data.drinks[0], drinkIng: ing });
+        
       })
       .catch((err) => console.log(err));
   };
-
+  
   handleInputChange = (event) => {
     const value = event.target.value;
 
@@ -84,7 +118,7 @@ class Recipes extends Component {
               </h5>
 
               <div className="row drink-wrapper">
-                <div id="vodkaInput" className="col s4 m4 l4">
+                <div  className="col s4 m4 l4">
                 <Button
                     onClick={this.handleButtonClick}
                     type="success"
@@ -94,7 +128,7 @@ class Recipes extends Component {
                   </Button>
                 </div>
 
-                <div id="rumInput" className="col s4 m4 l4">
+                <div  className="col s4 m4 l4">
                   <Button
                     onClick={this.handleButtonClick}
                     type="success"
@@ -104,7 +138,7 @@ class Recipes extends Component {
                   </Button>
                 </div>
 
-                <div id="tequilaInput" className="col s4 m4 l4">
+                <div  className="col s4 m4 l4">
                   <Button
                     onClick={this.handleButtonClick}
                     type="success"
@@ -115,7 +149,7 @@ class Recipes extends Component {
                 </div>
               </div>
               <div className="row">
-                <div id="whiskeyInput" className="col s4 m4">
+                <div  className="col s4 m4">
                   <Button
                     onClick={this.handleButtonClick}
                     type="success"
@@ -125,7 +159,7 @@ class Recipes extends Component {
                   </Button>
                 </div>
 
-                <div id="ginInput" className="col s4 m4 l4">
+                <div  className="col s4 m4 l4">
                   <Button
                     onClick={this.handleButtonClick}
                     type="success"
@@ -135,7 +169,7 @@ class Recipes extends Component {
                   </Button>
                 </div>
 
-                <div id="Non_AlcoholicInput" className="col s4 m4 l4">
+                <div  className="col s4 m4 l4">
                   <Button
                     onClick={this.handleRandomButtonClick}
                     type="success"
@@ -159,7 +193,8 @@ class Recipes extends Component {
             </Row>
             {this.state.drinkInfo.strDrink ? (
               <DrinkCard
-                recipe={this.state.drinkInfo.strIngredient1}
+                directions={this.state.drinkInfo.strInstructions}
+                ing={this.state.drinkIng}
                 image={this.state.drinkInfo.strDrinkThumb}
                 title={this.state.drinkInfo.strDrink}
               />
@@ -170,13 +205,13 @@ class Recipes extends Component {
           <Card s={12}>
             {this.state.drinkName.map((drink) => {
               return (
-                <button
+                <Button
                   key={drink.id}
                   onClick={() => this.setState(this.specificDrink(drink.id))}
                 >
                   {drink.name}
-                </button>
-              );
+                </Button>
+              )
             })}
           </Card>
         </main>

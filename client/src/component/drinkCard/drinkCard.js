@@ -15,7 +15,19 @@ function DrinkCard(props) {
                 waves="light"
               />
             }
-            reveal={<p> {props.recipe || "Pick a drink to see a recipe"}</p>}
+            reveal={
+              <div>
+            <p> 
+            <ul> {props.ing.map(element => {
+              return (
+                <li key={element}>
+                  {element}
+                </li>
+              )
+            })}
+            </ul>{props.directions}</p>
+            </div>
+            }
             revealIcon={<Icon>more_vert</Icon>}
             title={props.title || "generic response"}
           ></Card>
