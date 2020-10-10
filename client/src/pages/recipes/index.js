@@ -18,7 +18,7 @@ class recipes extends Component {
       search: "",
       drinkName: [],
       drinkInfo: {},
-      drinkRecipe: {}
+      drinkRecipe: {},
     };
   }
 
@@ -33,10 +33,16 @@ class recipes extends Component {
         this.setState({ ...this.state, result: data });
         const tempDrinkName = [];
         for (var i = 0; i < data.length; i++) {
-          tempDrinkName.push({ name: data[i].strDrink, id: data[i].idDrink });
+          tempDrinkName.push({
+            name: data[i].strDrink,
+            id: data[i].idDrink,
+          });
         }
         // return tempDrinkName;
-        this.setState({ ...this.state, drinkName: tempDrinkName });
+        this.setState({
+          ...this.state,
+          drinkName: tempDrinkName,
+        });
       })
       .catch((err) => console.log(err));
   };
@@ -44,7 +50,10 @@ class recipes extends Component {
     API.getId(query)
       .then((res) => {
         console.log(res.data.drinks[0]);
-        this.setState({ ...this.state, drinkInfo: res.data.drinks[0] });
+        this.setState({
+          ...this.state,
+          drinkInfo: res.data.drinks[0],
+        });
       })
       .catch((err) => console.log(err));
   };
@@ -65,7 +74,7 @@ class recipes extends Component {
     console.log(event.target);
     this.setState({
       ...this.state,
-      search: value
+      search: value,
     });
   };
   handleFormSubmit = (event) => {
@@ -87,7 +96,10 @@ class recipes extends Component {
                 Select a Spirit!
               </h5>
               <div className="row drink-wrapper">
-                <div id="vodkaInput" className="col s4 m4 l4">
+                <div
+                  id="vodkaInput"
+                  className="col s4 m4 l4"
+                >
                   <VodkaButton />
                 </div>
 
@@ -95,12 +107,18 @@ class recipes extends Component {
                   <RumButton />
                 </div>
 
-                <div id="tequilaInput" className="col s4 m4 l4">
+                <div
+                  id="tequilaInput"
+                  className="col s4 m4 l4"
+                >
                   <TequillaButton />
                 </div>
               </div>
               <div className="row">
-                <div id="whiskeyInput" className="col s4 m4">
+                <div
+                  id="whiskeyInput"
+                  className="col s4 m4"
+                >
                   <WhiskeyButton />
                 </div>
 
@@ -108,7 +126,10 @@ class recipes extends Component {
                   <GinButton />
                 </div>
 
-                <div id="Non_AlcoholicInput" className="col s4 m4 l4">
+                <div
+                  id="Non_AlcoholicInput"
+                  className="col s4 m4 l4"
+                >
                   <NonalcoholicButton />
                 </div>
               </div>
@@ -126,7 +147,9 @@ class recipes extends Component {
             </Row>
             {this.state.drinkInfo.strDrink ? (
               <DrinkCard
-                recipe={this.state.drinkInfo.strInstructions}
+                recipe={
+                  this.state.drinkInfo.strInstructions
+                }
                 image={this.state.drinkInfo.strDrinkThumb}
                 title={this.state.drinkInfo.strDrink}
               />
@@ -138,7 +161,11 @@ class recipes extends Component {
             {this.state.drinkName.map((drink) => {
               return (
                 <button
-                  onClick={() => this.setState(this.specificDrink(drink.id))}
+                  onClick={() =>
+                    this.setState(
+                      this.specificDrink(drink.id)
+                    )
+                  }
                   // value={drink.id}
                 >
                   {drink.name}

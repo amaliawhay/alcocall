@@ -4,18 +4,26 @@ const Schema = mongoose.Schema;
 const postSchema = new Schema({
   userName: {
     type: String,
-    required: true,
+    trim: true,
+    required: "Username is required.",
   },
   password: {
     type: String,
+    trim: true,
+    required: "Username is required",
+  },
+  age: {
+    type: Number,
     required: true,
     validate: [
-      ({ length }) => length >= 6,
-      "Password must be at least 6 characters long",
+      ({ age }) => age >= 21,
+      "You must be 21 or older to sign in",
     ],
   },
-  age: type,
-  date: { type: Date, default: Date.now },
+  userFavorites: {
+    type: Array,
+    required: false,
+  },
 });
 
 const Post = mongoose.model("Post", postSchema);
