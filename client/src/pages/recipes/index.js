@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import API from "../../utils/Api";
 import { Row, Col, Card } from "react-materialize";
 import TextInput from "../../component/textInput/textInput";
-import VodkaButton from "../../component/vodkaButton/vodkaButton";
 import DrinkCard from "../../component/drinkCard/drinkCard";
 import Button from "../../component/button/button";
 
@@ -18,9 +17,14 @@ class Recipes extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   this.searchIngredients("lemon");
-  // }
+  searchRandom = () =>  {
+    API.getRandom().then((res) => {
+      console.log(res.data.drinks[0]);
+        this.setState({ ...this.state, drinkInfo: res.data.drinks[0] });
+      
+    })
+    .catch((err) => console.log(err));
+  };           
   searchIngredients = (query) => {
     API.getIngs(query)
       .then((res) => {
@@ -59,6 +63,11 @@ class Recipes extends Component {
     this.searchIngredients(event.target.id);
     // console.log(this.children);
   };
+  handleRandomButtonClick = (event) => {
+    event.preventDefault();
+    console.log(event.target);
+    this.searchRandom();
+  }
   handleFormSubmit = (event) => {
     event.preventDefault();
     this.searchIngredients(this.state.search);
@@ -76,13 +85,13 @@ class Recipes extends Component {
 
               <div className="row drink-wrapper">
                 <div id="vodkaInput" className="col s4 m4 l4">
-                  <VodkaButton
+                <Button
                     onClick={this.handleButtonClick}
                     type="success"
                     className="input-lg"
                   >
                     Vodka
-                  </VodkaButton>
+                  </Button>
                 </div>
 
                 <div id="rumInput" className="col s4 m4 l4">
@@ -128,11 +137,11 @@ class Recipes extends Component {
 
                 <div id="Non_AlcoholicInput" className="col s4 m4 l4">
                   <Button
-                    onClick={this.handleButtonClick}
+                    onClick={this.handleRandomButtonClick}
                     type="success"
                     className="input-lg"
                   >
-                    Non-Alcoholic
+                    Random
                   </Button>
                 </div>
               </div>
