@@ -4,6 +4,7 @@
   "description": "Virtual Bartender",
   "main": "server.js",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.4.0",
     "axios": "^0.20.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
