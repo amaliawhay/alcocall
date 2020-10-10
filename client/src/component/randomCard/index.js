@@ -43,7 +43,7 @@ function RandomCard() {
           <Card
             actions={[
               <a className="btn light-blue darken-1" key="1" href="recipes">
-                Random Drink
+                Find a drink
               </a>
             ]}
             closeIcon={<Icon>close</Icon>}

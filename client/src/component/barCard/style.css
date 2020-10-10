@@ -87,6 +87,10 @@ a:hover {
   font-family: "BenchNine", serif;
 }
 
+.card-image-right {
+  float: right;
+}
+
 .card-title {
   font-family: BenchNine, serif;
   color: dimgrey;

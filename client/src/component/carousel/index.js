@@ -7,9 +7,11 @@ function Jumbo() {
       <Carousel
         carouselId="Carousel-2"
         images={[
-          "/assets/images/main_image_slider.png",
-          "/assets/images/main_image_slider-2.jpg",
-          "/assets/images/main_image_slider-3.jpg"
+          "/assets/images/main_slider_1.png",
+          "/assets/images/main_slider_2.png",
+          "/assets/images/main_slider_3.png",
+          "/assets/images/main_slider_4.png",
+          "/assets/images/main_slider_5.png"
         ]}
         options={{
           fullWidth: true,

@@ -11,7 +11,7 @@ function Tutorial() {
               key="1"
               href="https://www.youtube.com/embed/mDuAe3Q0zdI"
             >
-              Random Drink
+              Resources
             </a>
           ]}
           closeIcon={<Icon>close</Icon>}

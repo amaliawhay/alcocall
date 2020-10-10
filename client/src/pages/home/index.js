@@ -11,8 +11,8 @@ function home() {
     <div>
       <Jumbo />
       <Container />
-      <BreweryCard />
       <RandomCard />
+      <BreweryCard />
       <BarCard />
       <Tutorial />
     </div>

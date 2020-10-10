@@ -25,7 +25,6 @@ function BarCard() {
                     fontSize: "large"
                   }}
                 >
-                  Bar Search
                 </Link>
               </CardTitle>
             }
