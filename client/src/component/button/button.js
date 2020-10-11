@@ -2,7 +2,7 @@ import React from "react";
 
 // Destructuring the type, className, children and onClick props, applying them to the button element
 
-function Button({ type = "default", className, children, onClick }) {
+function DrinkButton({ type = "default", className, children, onClick }) {
   return (
     <button
       id={children}
@@ -18,5 +18,5 @@ function Button({ type = "default", className, children, onClick }) {
   );
 }
 
-export default Button;
+export default DrinkButton;
 

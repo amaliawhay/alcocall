@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import API from "../../utils/Api";
-import { Row, Col, Card } from "react-materialize";
+import { Row, Col, Card, Button } from "react-materialize";
 import TextInput from "../../component/textInput/textInput";
 import DrinkCard from "../../component/drinkCard/drinkCard";
-import Button from "../../component/button/button";
+import DrinkButton from "../../component/button/button";
 
 class Recipes extends Component {
   constructor(props) {
@@ -119,64 +119,64 @@ class Recipes extends Component {
 
               <div className="row drink-wrapper">
                 <div  className="col s4 m4 l4">
-                <Button
+                <DrinkButton
                     onClick={this.handleButtonClick}
                     type="success"
                     className="input-lg"
                   >
                     Vodka
-                  </Button>
+                  </DrinkButton>
                 </div>
 
                 <div  className="col s4 m4 l4">
-                  <Button
+                  <DrinkButton
                     onClick={this.handleButtonClick}
                     type="success"
                     className="input-lg"
                   >
                     Rum
-                  </Button>
+                  </DrinkButton>
                 </div>
 
                 <div  className="col s4 m4 l4">
-                  <Button
+                  <DrinkButton
                     onClick={this.handleButtonClick}
                     type="success"
                     className="input-lg"
                   >
                     Tequila
-                  </Button>
+                  </DrinkButton>
                 </div>
               </div>
               <div className="row">
                 <div  className="col s4 m4">
-                  <Button
+                  <DrinkButton
                     onClick={this.handleButtonClick}
                     type="success"
                     className="input-lg"
                   >
                     Whiskey
-                  </Button>
+                  </DrinkButton>
                 </div>
 
                 <div  className="col s4 m4 l4">
-                  <Button
+                  <DrinkButton
                     onClick={this.handleButtonClick}
                     type="success"
                     className="input-lg"
                   >
                     Gin
-                  </Button>
+                  </DrinkButton>
                 </div>
 
                 <div  className="col s4 m4 l4">
-                  <Button
+                  <DrinkButton
                     onClick={this.handleRandomButtonClick}
                     type="success"
                     className="input-lg"
                   >
                     Random
-                  </Button>
+                  </DrinkButton>
                 </div>
               </div>
             </div>
@@ -206,17 +206,23 @@ class Recipes extends Component {
             {this.state.drinkName.map((drink) => {
               return (
                 <Button
-                  key={drink.id}
+                  flat
+                  node="button"
+                   waves="light"
+                   key={drink.id}
                   onClick={() => this.setState(this.specificDrink(drink.id))}
                 >
                   {drink.name}
+
+  
                 </Button>
-              )
-            })}
-          </Card>
-        </main>
-      </div>
-    );
-  }
-}
+                                
+                              )
+                            })}
+                          </Card>
+                        </main>
+                      </div>
+                    );
+                  }
+                }
 export default Recipes;

@@ -33,7 +33,7 @@ function DrinkCard(props) {
           ></Card>
         </Col>
       </Row>
-      ;
+      
     </div>
   );
 }
