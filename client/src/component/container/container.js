@@ -4,7 +4,7 @@ function container() {
     <div>
       <div className="row">
         <div className="col s12">
-          <section className="main-text-section">
+          {/* <section className="main-text-section">
             <h5
               className="center-align light-blue-text text-darken-1"
               style={{ fontFamily: "BenchNine, serif" }}
@@ -43,7 +43,7 @@ function container() {
             >
               We got you.
             </p>
-          </section>
+          </section> */}
         </div>
       </div>
     </div>
