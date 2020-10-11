@@ -14,7 +14,7 @@ module.exports = function validateRegisterInput(data) {
   data.password2 = !isEmpty(data.password2)
     ? data.password2
     : "";
-  toString(data.age)s = !isEmpty(data.age) ? data.age : "";
+  toString(data.age) = !isEmpty(data.age) ? data.age : "";
 
   //Check for userName
   if (Validator.isEmpty(data.userName)) {
@@ -34,7 +34,7 @@ module.exports = function validateRegisterInput(data) {
     errors.password2 = "Passwords must match";
   }
 
-  if (Validator.equals(data.age)) {
+  if (!Validator.equals(data.age)) {
     errors.age = "Age is a required field.";
   }
 
