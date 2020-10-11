@@ -15,10 +15,10 @@ const postSchema = new Schema({
   age: {
     type: Number,
     required: true,
-    validate: [
-      ({ age }) => age >= 21,
-      "You must be 21 or older to sign in",
-    ],
+    // validate: [
+    //   ({ age }) => age >= 21,
+    //   "You must be 21 or older to sign in",
+    // ],
   },
   userFavorites: {
     type: Array,

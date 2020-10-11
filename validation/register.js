@@ -14,7 +14,7 @@ module.exports = function validateRegisterInput(data) {
   data.password2 = !isEmpty(data.password2)
     ? data.password2
     : "";
-  data.age = !isEmpty(data.age) ? data.age : "";
+  toString(data.age)s = !isEmpty(data.age) ? data.age : "";
 
   //Check for userName
   if (Validator.isEmpty(data.userName)) {
@@ -32,6 +32,15 @@ module.exports = function validateRegisterInput(data) {
 
   if (!Validator.equals(data.password, data.password2)) {
     errors.password2 = "Passwords must match";
+  }
+
+  if (Validator.equals(data.age)) {
+    errors.age = "Age is a required field.";
+  }
+
+  if (!Validator.equals(data.age >= 21)) {
+    errors.age =
+      "You must be 21 or older to create an account";
   }
 
   return {
