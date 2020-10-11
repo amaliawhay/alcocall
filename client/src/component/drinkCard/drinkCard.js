@@ -4,8 +4,7 @@ import { Row, Col, Card, CardTitle, Icon } from "react-materialize";
 function DrinkCard(props) {
   return (
     <div>
-      <Row>
-        <Col m={6} s={12}>
+     
           <Card
             closeIcon={<Icon>close</Icon>}
             header={
@@ -31,8 +30,7 @@ function DrinkCard(props) {
             revealIcon={<Icon>more_vert</Icon>}
             title={props.title || "generic response"}
           ></Card>
-        </Col>
-      </Row>
+        
       
     </div>
   );
