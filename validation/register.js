@@ -34,11 +34,11 @@ module.exports = function validateRegisterInput(data) {
     errors.password2 = "Passwords must match";
   }
 
-  if (!Validator.equals(data.age)) {
+  if (Validator.equals(data.age)) {
     errors.age = "Age is a required field.";
   }
 
-  if (!Validator.equals(data.age >= 21)) {
+  if (!Validator.isInt({ min: 21 })) {
     errors.age =
       "You must be 21 or older to create an account";
   }
