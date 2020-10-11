@@ -240,6 +240,28 @@ searchNonAlcoholic = () => {
             </Row>
             
             <Row>
+            <Col m={6} s={6} l={6}>  
+
+                  {this.handleButtonClick ? (
+                  <Card m={6} s={6} l={6}>
+                  {this.state.drinkName.map((drink) => {
+                  return (
+                    <Button
+                      flat
+                      node="button"
+                        waves="light"
+                        key={drink.id}
+                      onClick={() => this.setState(this.specificDrink(drink.id))}
+                    >
+                      {drink.name}  
+                    </Button>                                
+                  )
+                  })}
+                  </Card>
+                  ) : (
+                  <h3>nope</h3>
+                  )}
+              </Col>
               <Col m={6} s={6} l={6}>
               {this.state.drinkInfo.strDrink ? (
               <DrinkCard s={6} m={6} l={6}
@@ -249,25 +271,10 @@ searchNonAlcoholic = () => {
                 title={this.state.drinkInfo.strDrink}
               />
             ) : (
-              <h3>No Results to Display</h3>
+              <h3></h3>
             )}
               </Col>
-             <Col m={6} s={6} l={6}>             
-             <Card m={6} s={6} l={6}>
-            {this.state.drinkName.map((drink) => {
-              return (
-                <Button
-                  flat
-                  node="button"
-                   waves="light"
-                   key={drink.id}
-                  onClick={() => this.setState(this.specificDrink(drink.id))}
-                >
-                  {drink.name}  
-                </Button>                                
-              )
-            })}
-          </Card></Col>            
+                        
             </Row>            
                   
         </main>
