@@ -5,12 +5,12 @@ const postSchema = new Schema({
   userName: {
     type: String,
     trim: true,
-    required: "Username is required.",
+    required: true
   },
   password: {
     type: String,
     trim: true,
-    required: "Username is required",
+    required: true,
   },
   age: {
     type: Number,
