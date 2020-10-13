@@ -240,7 +240,7 @@ searchNonAlcoholic = () => {
               s={6} m={6} l={6}>
               
                 <TextInput 
-                className="valign-wrappe"
+                className="valign-wrapper"
                   
                   
                   value={this.state.search}
@@ -250,7 +250,7 @@ searchNonAlcoholic = () => {
                 
               
               <Button
-              className="btn light-blue darken-1 btn:hover pulse drink-wrapper-buttons"
+              className="btn light-blue darken-1 btn:hover pulse drink-wrapper-buttons valign-wrapper"
               onClick={(event) => this.handleFormSubmit(event)}
               >
                 Search
@@ -290,7 +290,7 @@ searchNonAlcoholic = () => {
                 title={this.state.drinkInfo.strDrink}
               />
             ) : (
-              <h3></h3>
+              ""
             )}
               </Col>
                         

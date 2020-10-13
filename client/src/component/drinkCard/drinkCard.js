@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Card, CardTitle, Icon } from "react-materialize";
+import { Card, CardTitle, Icon } from "react-materialize";
 
 function DrinkCard(props) {
   return (
