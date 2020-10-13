@@ -134,7 +134,10 @@ searchNonAlcoholic = () => {
       <div>
         <main className="container main-content">
                 <Row>
-                  <Col className="push-s4 push-m4 push-l4">
+                  <Col 
+                  s={3} m={3} l={3}
+                  className="push-s4 push-m4 push-l4
+                   right-align">
                   <h5 className="light-blue-text text-darken-1">
                 Select a Spirit!
               </h5>
@@ -232,6 +235,15 @@ searchNonAlcoholic = () => {
                 <Col>
                 </Col>
               </Row>
+
+              <Row>
+                  <Col className="push-s4 push-m4 push-l4 center-align">
+                  <h5 className="light-blue-text text-darken-1 center-align">
+                Or select an ingredient!
+              </h5>
+                  </Col>
+                
+                </Row>
               
            
             <Row>
