@@ -248,10 +248,7 @@ searchNonAlcoholic = () => {
                   handleFormSubmit={(event) => this.handleFormSubmit(event)}
                 />
                 
-              </Col>
-              <Col
-              className=""
-              s={6} m={6} l={6}>
+              
               <Button
               className="btn light-blue darken-1 btn:hover pulse drink-wrapper-buttons"
               onClick={(event) => this.handleFormSubmit(event)}
