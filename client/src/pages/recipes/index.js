@@ -14,7 +14,8 @@ class Recipes extends Component {
       drinkName: [],
       drinkInfo: {},
       drinkIng: {},
-      drinkMeasurment: {}
+      drinkMeasurment: {},
+      show: false
     };
   }
 searchNonAlcoholic = () => {
@@ -107,7 +108,8 @@ searchNonAlcoholic = () => {
   };
   handleButtonClick = (event) => {
     event.preventDefault();
-    console.log(event.target);
+    this.setState({...this.state, show:true})
+    console.log(this.state);
     this.searchIngredients(event.target.id);
     // console.log(this.children);
   };
@@ -118,10 +120,12 @@ searchNonAlcoholic = () => {
   }
   handleNonAlcoholicButton = (event) => {
     event.preventDefault();
+    this.setState({...this.state, show:true})
     this.searchNonAlcoholic();
   }
   handleFormSubmit = (event) => {
     event.preventDefault();
+    this.setState({...this.state, show:true})
     this.searchIngredients(this.state.search);
   };
 
@@ -175,7 +179,7 @@ searchNonAlcoholic = () => {
               <Row>
                 <Col s={3} m={3} l={3}>
                 <DrinkButton
-                    onClick={this.handleButtonClick}
+                    onClick={(event) => this.handleButtonClick(event)}
                     type="success"
                     className="input-lg"
                   >
@@ -223,7 +227,7 @@ searchNonAlcoholic = () => {
                   
                   value={this.state.search}
                   handleInputChange={this.handleInputChange}
-                  handleFormSubmit={this.handleFormSubmit}
+                  handleFormSubmit={(event) => this.handleFormSubmit(event)}
                 />
                 
               </Col>
@@ -232,7 +236,7 @@ searchNonAlcoholic = () => {
               s={6} m={6} l={6}>
               <Button
               
-              onClick={this.handleFormSubmit}
+              onClick={(event) => this.handleFormSubmit(event)}
               >
                 Search
                 </Button>
@@ -241,8 +245,8 @@ searchNonAlcoholic = () => {
             
             <Row>
             <Col m={6} s={6} l={6}>  
-
-                  {this.handleButtonClick ? (
+                  
+                  {this.state.show ? (
                   <Card m={6} s={6} l={6}>
                   {this.state.drinkName.map((drink) => {
                   return (
@@ -259,7 +263,7 @@ searchNonAlcoholic = () => {
                   })}
                   </Card>
                   ) : (
-                  <h3>nope</h3>
+                  ""
                   )}
               </Col>
               <Col m={6} s={6} l={6}>

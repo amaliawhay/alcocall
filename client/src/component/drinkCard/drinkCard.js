@@ -16,15 +16,17 @@ function DrinkCard(props) {
             }
             reveal={
               <div>
-            <p> 
+             
             <ul> {props.ing.map(element => {
+              console.log(element)
               return (
                 <li key={element}>
                   {element}
                 </li>
               )
             })}
-            </ul>{props.directions}</p>
+            </ul>
+            <p>{props.directions}</p>
             </div>
             }
             revealIcon={<Icon>more_vert</Icon>}
