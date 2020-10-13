@@ -133,10 +133,15 @@ searchNonAlcoholic = () => {
     return (
       <div>
         <main className="container main-content">
-         
-              <h5 className="light-blue-text text-darken-1">
+                <Row>
+                  <Col className="push-s4 push-m4 push-l4">
+                  <h5 className="light-blue-text text-darken-1">
                 Select a Spirit!
               </h5>
+                  </Col>
+                
+                </Row>
+              
 
               <Row>
                 <Col s={3} m={3} l={3}>
@@ -215,6 +220,18 @@ searchNonAlcoholic = () => {
                 </Col>
               </Row>
 
+              <Row>
+                <Col>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                </Col>
+              </Row>
               
            
             <Row>
@@ -222,7 +239,8 @@ searchNonAlcoholic = () => {
               className="push-s3 push-m3 push-l3"
               s={6} m={6} l={6}>
               
-                <TextInput
+                <TextInput 
+                className="valign-wrappe"
                   
                   
                   value={this.state.search}
@@ -232,10 +250,10 @@ searchNonAlcoholic = () => {
                 
               </Col>
               <Col
-              className="push-s1 push-m1 push-l1"
+              className=""
               s={6} m={6} l={6}>
               <Button
-              
+              className="btn light-blue darken-1 btn:hover pulse drink-wrapper-buttons"
               onClick={(event) => this.handleFormSubmit(event)}
               >
                 Search
