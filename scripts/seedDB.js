@@ -9,12 +9,14 @@ mongoose.connect(
   }
 );
 
-var userSeed = {
-  userName: "amaliawhay",
-  password: "booze123",
-  age: 92,
-  userFavorites: [],
-};
+var userSeed = [
+  {
+    userName: "amaliawhay",
+    password: "booze123",
+    age: 92,
+    userFavorites: [],
+  },
+];
 
 db.Post.remove({})
   .then(() => db.Post.collection.insertMany(userSeed))

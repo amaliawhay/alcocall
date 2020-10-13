@@ -11,10 +11,10 @@ module.exports = function validateRegisterInput(data) {
   data.password = !isEmpty(data.password)
     ? data.password
     : "";
-  data.password2 = !isEmpty(data.password2)
-    ? data.password2
-    : "";
-  toString(data.age) = !isEmpty(data.age) ? data.age : "";
+  // data.password2 = !isEmpty(data.password2)
+  //   ? data.password2
+  //   : "";
+  data.age = !isEmpty(data.age) ? data.age.toString() : "";
 
   //Check for userName
   if (Validator.isEmpty(data.userName)) {
@@ -25,20 +25,20 @@ module.exports = function validateRegisterInput(data) {
     errors.password = "Password is a required field";
   }
 
-  if (Validator.isEmpty(data.password2)) {
-    errors.password2 +
-      "Password confirmation is a required field";
-  }
+  // if (Validator.isEmpty(data.password2)) {
+  //   errors.password2 +
+  //     "Password confirmation is a required field";
+  // }
 
-  if (!Validator.equals(data.password, data.password2)) {
-    errors.password2 = "Passwords must match";
-  }
+  // if (!Validator.equals(data.password, data.password2)) {
+  //   errors.password2 = "Passwords must match";
+  // }
 
-  if (Validator.equals(data.age)) {
-    errors.age = "Age is a required field.";
-  }
+  // if (Validator.equals(data.age)) {
+  //   errors.age = "Age is a required field.";
+  // }
 
-  if (!Validator.isInt({ min: 21 })) {
+  if (Validator.isInt(data.age, { min: 21 })) {
     errors.age =
       "You must be 21 or older to create an account";
   }

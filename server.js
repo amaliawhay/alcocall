@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 
-const users = require("./routes/api/users");
+const routes = require("./routes");
 
 const PORT = process.env.PORT || 3001;
 
@@ -34,8 +34,8 @@ if (process.env.NODE_ENV === "production") {
 }
 
 //Routes
-app.use(routes);
-app.use("/api/users", users);
+app.use("/", routes);
+//app.use("/api/users", users);
 
 // Connect to MongoDB
 mongoose
