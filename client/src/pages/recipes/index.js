@@ -13,13 +13,9 @@ class Recipes extends Component {
       search: "",
       drinkName: [],
       drinkInfo: {},
-
-      drinkRecipe: {},
-
       drinkIng: {},
       drinkMeasurment: {},
       show: false
-
     };
   }
 searchNonAlcoholic = () => {
@@ -69,16 +65,10 @@ searchNonAlcoholic = () => {
         this.setState({ ...this.state, result: data });
         const tempDrinkName = [];
         for (var i = 0; i < data.length; i++) {
-          tempDrinkName.push({
-            name: data[i].strDrink,
-            id: data[i].idDrink,
-          });
+          tempDrinkName.push({ name: data[i].strDrink, id: data[i].idDrink });
         }
         // return tempDrinkName;
-        this.setState({
-          ...this.state,
-          drinkName: tempDrinkName,
-        });
+        this.setState({ ...this.state, drinkName: tempDrinkName });
       })
       .catch((err) => console.log(err));
   };
@@ -88,13 +78,9 @@ searchNonAlcoholic = () => {
         var ing = [];
         
         console.log(res.data.drinks[0]);
-        this.setState({
-          ...this.state,
-          drinkInfo: res.data.drinks[0],
-        });
-      })
-      .catch((err) => console.log(err));
-  };
+        for (let i = 1; i < 16; i++){
+          if (res.data.drinks[0]['strIngredient' + [i]] === null && res.data.drinks[0]['strMeasure' + [i]] === null) {
+          }else if (res.data.drinks[0]['strMeasure' + [i]] === null){
 
           }
           
@@ -117,7 +103,7 @@ searchNonAlcoholic = () => {
 
     this.setState({
       ...this.state,
-      search: value,
+      search: value
     });
   };
   handleButtonClick = (event) => {
@@ -157,12 +143,8 @@ searchNonAlcoholic = () => {
                 </Row>
               
 
-
               <Row>
                 <Col s={3} m={3} l={3}>
-=======
-              <div className="row drink-wrapper">
-                <div  className="col s4 m4 l4">
                 <DrinkButton
                     onClick={this.handleButtonClick}
                     type="success"
@@ -173,42 +155,15 @@ searchNonAlcoholic = () => {
                 </Col>
                 <Col s={3} m={3} l={3}>
                 <DrinkButton
-                </div>
-
-                <div  className="col s4 m4 l4">
-                  <DrinkButton
->>>>>>> 9ac9fa45f934c538d1086430746905465507deb3
                     onClick={this.handleButtonClick}
                     type="success"
                     className="input-lg"
                   >
                     Rum
                   </DrinkButton>
-<<<<<<< HEAD
                 </Col>
                 <Col s={3} m={3} l={3}>                
                 <DrinkButton
-=======
-                </div>
-
-<<<<<<< HEAD
-                <div
-                  id="tequilaInput"
-                  className="col s4 m4 l4"
-                >
-                  <TequillaButton />
-                </div>
-              </div>
-              <div className="row">
-                <div
-                  id="whiskeyInput"
-                  className="col s4 m4"
-                >
-                  <WhiskeyButton />
-=======
-                <div  className="col s4 m4 l4">
-                  <DrinkButton
->>>>>>> 9ac9fa45f934c538d1086430746905465507deb3
                     onClick={this.handleButtonClick}
                     type="success"
                     className="input-lg"
@@ -223,12 +178,7 @@ searchNonAlcoholic = () => {
                   >
                     Gin
                   </DrinkButton>
-<<<<<<< HEAD
                 </Col>
-=======
->>>>>>> 6e4c7c9b877d987364be5bc4d1b02df3a97d5c24
-                </div>
->>>>>>> 9ac9fa45f934c538d1086430746905465507deb3
 
               </Row>
               <Row>
@@ -240,30 +190,15 @@ searchNonAlcoholic = () => {
                   >
                     Tequila
                   </DrinkButton>
-<<<<<<< HEAD
                 </Col>
                 <Col s={3} m={3} l={3}>
                 <DrinkButton
-=======
-                </div>
-
-<<<<<<< HEAD
-                <div
-                  id="Non_AlcoholicInput"
-                  className="col s4 m4 l4"
-                >
-                  <NonalcoholicButton />
-=======
-                <div  className="col s4 m4 l4">
-                  <DrinkButton
->>>>>>> 9ac9fa45f934c538d1086430746905465507deb3
                     onClick={this.handleRandomButtonClick}
                     type="success"
                     className="input-lg"
                   >
                     Random
                   </DrinkButton>
-<<<<<<< HEAD
                 </Col>
                 <Col s={3} m={3} l={3}>
                 <DrinkButton
@@ -299,8 +234,6 @@ searchNonAlcoholic = () => {
               </Row>
               
            
-
-          
             <Row>
               <Col 
               className="push-s3 push-m3 push-l3"
@@ -324,7 +257,6 @@ searchNonAlcoholic = () => {
                 </Button>
               </Col>
             </Row>
-
             
             <Row>
             <Col m={6} s={6} l={6}>  
@@ -352,24 +284,14 @@ searchNonAlcoholic = () => {
               <Col m={6} s={6} l={6}>
               {this.state.drinkInfo.strDrink ? (
               <DrinkCard s={6} m={6} l={6}
-
-            {this.state.drinkInfo.strDrink ? (
-              <DrinkCard
-
-                recipe={
-                  this.state.drinkInfo.strInstructions
-                }
-
                 directions={this.state.drinkInfo.strInstructions}
                 ing={this.state.drinkIng}
-
                 image={this.state.drinkInfo.strDrinkThumb}
                 title={this.state.drinkInfo.strDrink}
               />
             ) : (
               ""
             )}
-
               </Col>
                         
             </Row>            
@@ -379,40 +301,4 @@ searchNonAlcoholic = () => {
     );
   }
 }
-
-          </div>
-          <Card s={12}>
-            {this.state.drinkName.map((drink) => {
-              return (
-
-                <button
-                  onClick={() =>
-                    this.setState(
-                      this.specificDrink(drink.id)
-                    )
-                  }
-                  // value={drink.id}
-
-                <Button
-                  flat
-                  node="button"
-                   waves="light"
-                   key={drink.id}
-                  onClick={() => this.setState(this.specificDrink(drink.id))}
-
-                >
-                  {drink.name}
-
-  
-                </Button>
-                                
-                              )
-                            })}
-                          </Card>
-                        </main>
-                      </div>
-                    );
-                  }
-                }
-
 export default Recipes;
