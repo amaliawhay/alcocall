@@ -10,11 +10,7 @@ function textInput(props) {
         onChange={props.handleInputChange}
         value={props.value}
       />
-      <div>
-        <button onClick={props.handleFormSubmit} className="btn btn-primary">
-          Search
-        </button>
-      </div>
+     
     </div>
   );
 }

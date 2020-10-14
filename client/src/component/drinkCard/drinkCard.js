@@ -1,11 +1,10 @@
 import React from "react";
-import { Row, Col, Card, CardTitle, Icon } from "react-materialize";
+import { Card, CardTitle, Icon } from "react-materialize";
 
 function DrinkCard(props) {
   return (
     <div>
-      <Row>
-        <Col m={6} s={12}>
+     
           <Card
             closeIcon={<Icon>close</Icon>}
             header={
@@ -17,22 +16,23 @@ function DrinkCard(props) {
             }
             reveal={
               <div>
-            <p> 
+             
             <ul> {props.ing.map(element => {
+              console.log(element)
               return (
                 <li key={element}>
                   {element}
                 </li>
               )
             })}
-            </ul>{props.directions}</p>
+            </ul>
+            <p>{props.directions}</p>
             </div>
             }
             revealIcon={<Icon>more_vert</Icon>}
             title={props.title || "generic response"}
           ></Card>
-        </Col>
-      </Row>
+        
       
     </div>
   );
