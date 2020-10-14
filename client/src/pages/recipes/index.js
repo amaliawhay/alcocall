@@ -6,7 +6,7 @@ import DrinkCard from "../../component/drinkCard/drinkCard";
 import DrinkButton from "../../component/button/button";
 
 var searchedIng = JSON.parse(localStorage.getItem("searchedFor")) || [];
-
+var inputSearch = [];
 
 class Recipes extends Component {
   constructor(props) {
@@ -20,6 +20,9 @@ class Recipes extends Component {
       drinkMeasurment: {},
       show: false
     };
+  }
+  clearLocal = (event) => {
+    localStorage.clear();
   }
 searchNonAlcoholic = () => {
   API.getNonAlcohol().then((res) => {
@@ -38,6 +41,8 @@ searchNonAlcoholic = () => {
 }
   searchRandom = () =>  {
     API.getRandom().then((res) => {
+      // localStorage.clear();
+      // localStorage.removeItem("searchedFor");
       var ing = [];
       
       // console.log(res.data.drinks[0]);
@@ -96,7 +101,7 @@ searchNonAlcoholic = () => {
   
   handleInputChange = (event) => {
     const value = event.target.value;
-
+    
     this.setState({
       ...this.state,
       search: value
@@ -123,11 +128,12 @@ searchNonAlcoholic = () => {
     event.preventDefault();  
       
     this.setState({...this.state, show:true})
-    var inputSearch = this.state.search;
-    var searchToLocal = [];
-    searchToLocal.push(inputSearch);
-    console.log(searchToLocal)
-    localStorage.setItem("searchedFor", JSON.stringify(searchToLocal));
+    // var inputSearch = ;
+    var searchToLocal = this.state.search;
+    inputSearch.push(searchToLocal);
+    console.log(inputSearch)
+    localStorage.setItem("searchedFor", JSON.stringify(inputSearch));
+    console.log(inputSearch.toString().split(" ").join("_"))
     this.searchIngredients(this.state.search);
   };
 
@@ -256,6 +262,13 @@ searchNonAlcoholic = () => {
               onClick={(event) => this.handleFormSubmit(event)}
               >
                 Search
+                </Button>
+
+                <Button
+              className="btn light-blue darken-1 btn:hover pulse drink-wrapper-buttons valign-wrapper"
+              onClick={(event) => this.clearLocal(event)}
+              >
+                Clear Search
                 </Button>
               </Col>
             </Row>
