@@ -2,6 +2,9 @@
 const compression = require("compression");
 const express = require("express");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const passport = require("passport");
+
 const routes = require("./routes");
 
 const PORT = process.env.PORT || 3001;
@@ -15,16 +18,42 @@ app.use(compression());
 // Middlewares defined here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+//Passport middleware
+app.use(passport.initialize());
+
+//Passport config
+require("./config/passport")(passport);
+
 // Serve static assets (Heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
 //Routes
-app.use(routes);
+app.use("/", routes);
+//app.use("/api/users", users);
 
 // Connect to MongoDB
+<<<<<<< HEAD
+mongoose
+  .connect(
+    process.env.MONGODB_URI ||
+      "mongodb://localhost/alcocalldb",
+    {
+      useNewUrlParser: true,
+    }
+  )
+  .then(() =>
+    console.log("MongoDB successfully connected!")
+  )
+  .catch((err) => console.log(err));
+=======
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/");
+>>>>>>> 6e4c7c9b877d987364be5bc4d1b02df3a97d5c24
 
 //Start server
 app.listen(PORT, function () {
