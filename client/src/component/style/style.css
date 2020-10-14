@@ -84,7 +84,7 @@ a:hover {
 .main-text {
   padding-left: 25px;
   padding-right: 25px;
-  font-family: "BenchNine", serif;
+  font-family: BenchNine, serif;
 }
 
 .card-title {
@@ -204,6 +204,11 @@ h5 {
 .card-title {
   color: dimgrey;
   font-size: 10px;
+}
+
+.card-content {
+  font-family: BenchNine, sans-serif;
+  font-size: large;
 }
 
 .card-buttons {

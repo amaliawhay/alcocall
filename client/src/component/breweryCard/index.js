@@ -60,7 +60,6 @@ function breweryCard() {
           </Card>
         </Col>
       </Row>
-      ;
     </div>
   );
 }

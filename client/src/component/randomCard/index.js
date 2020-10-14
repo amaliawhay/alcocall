@@ -57,7 +57,6 @@ function RandomCard() {
           </Card>
         </Col>
       </Row>
-      ;
     </div>
   );
 }

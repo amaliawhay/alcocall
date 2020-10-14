@@ -4,7 +4,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: BenchNine, sans-serif;
 }
 
 .nav-bar {
@@ -87,7 +87,7 @@ a:hover {
 .main-text {
   padding-left: 25px;
   padding-right: 25px;
-  font-family: "BenchNine", serif;
+  font-family: BenchNine, serif;
 }
 
 .card-title {
