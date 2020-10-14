@@ -105,8 +105,8 @@ searchNonAlcoholic = () => {
   
   handleInputChange = (event) => {
     const value = event.target.value;
-    console.log(event.target.value);
-    localStorage.setItem("searchedFor", JSON.stringify(searchedIng));
+    // console.log(event.target.value);
+    
 
     this.setState({
       ...this.state,
@@ -118,6 +118,7 @@ searchNonAlcoholic = () => {
     this.setState({...this.state, show:true})
     console.log(this.state);
     this.searchIngredients(event.target.id);
+    
     // console.log(this.children);
   };
   handleRandomButtonClick = (event) => {
@@ -132,7 +133,11 @@ searchNonAlcoholic = () => {
   }
   handleFormSubmit = (event) => {
     event.preventDefault();
-
+    var searchedForIng = [];
+    searchedForIng.push(this.state.search);
+    console.log(searchedForIng);
+    // searchedIng.push(searchedForIng);
+    localStorage.setItem("searchedFor", JSON.stringify(searchedIng));
     
     this.setState({...this.state, show:true})
     this.searchIngredients(this.state.search);
