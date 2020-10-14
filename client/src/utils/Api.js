@@ -18,7 +18,12 @@ export default {
   },
   getId: function (id) {
     return axios.get(
-      "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + id
+      `https://www.thecocktaildb.com/api/json/${process.env.REACT_APP_COCKTAILS_API_KEY}/lookup.php?i=` + id
+    );
+  },
+  getMultiIng: function (ing) {
+    return axios.get(
+      `https://www.thecocktaildb.com/api/json/${process.env.REACT_APP_COCKTAILS_API_KEY}/filter.php?i=` + ing
     );
   }
 };

@@ -23,6 +23,8 @@ class Recipes extends Component {
   }
   clearLocal = (event) => {
     localStorage.clear();
+    inputSearch.splice(0, inputSearch.length)
+    console.log(inputSearch)
   }
 searchNonAlcoholic = () => {
   API.getNonAlcohol().then((res) => {
@@ -66,9 +68,10 @@ searchNonAlcoholic = () => {
     .catch((err) => console.log(err));
   };           
   searchIngredients = (query) => {
-    API.getIngs(query)
+    API.getMultiIng(query)
       .then((res) => {
         const data = res.data.drinks;
+        // console.log(data);
 
         this.setState({ ...this.state, result: data });
         const tempDrinkName = [];
@@ -111,7 +114,7 @@ searchNonAlcoholic = () => {
     event.preventDefault();
     this.setState({...this.state, show:true})
     // console.log(this.state);
-    // this.searchIngredients(event.target.id);
+    this.searchIngredients(event.target.id);
     // console.log(this.children);
   };
   handleRandomButtonClick = (event) => {
@@ -129,12 +132,24 @@ searchNonAlcoholic = () => {
       
     this.setState({...this.state, show:true})
     // var inputSearch = ;
-    var searchToLocal = this.state.search;
-    inputSearch.push(searchToLocal);
-    console.log(inputSearch)
-    localStorage.setItem("searchedFor", JSON.stringify(inputSearch));
-    console.log(inputSearch.toString().split(" ").join("_"))
-    this.searchIngredients(this.state.search);
+    if (inputSearch.length < 1) {
+      console.log(searchedIng)
+      var searchToLocal = this.state.search;
+      inputSearch.push(searchToLocal);
+      // console.log(inputSearch)
+      localStorage.setItem("searchedFor", JSON.stringify(inputSearch));
+      // console.log(inputSearch.toString().split(" ").join("_"))
+      this.searchIngredients(this.state.search);
+    } else {
+      // console.log(searchedIng)
+      var searchToLocal = this.state.search;
+      inputSearch.push(searchToLocal);
+      console.log(inputSearch)
+      localStorage.setItem("searchedFor", JSON.stringify(inputSearch.toString().split(" ").join("_")));
+      console.log(inputSearch.toString().split(" ").join("_"))
+      this.searchIngredients(searchedIng)
+    }
+    
   };
 
   render() {
@@ -241,7 +256,7 @@ searchNonAlcoholic = () => {
                 </Col>
               </Row>
               
-           
+    <h3>{inputSearch}</h3>
             <Row>
               <Col 
               className="push-s3 push-m3 push-l3"
