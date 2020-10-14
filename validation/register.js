@@ -38,9 +38,9 @@ module.exports = function validateRegisterInput(data) {
   //   errors.age = "Age is a required field.";
   // }
 
-  if (Validator.isInt(data.age, { min: 21 })) {
+  if (Validator.isInt(data.age, { max: 21 })) {
     errors.age =
-      "You must be 21 or older to create an account";
+      "You must be 21 or older to create an account and use the drink builder feature";
   }
 
   return {

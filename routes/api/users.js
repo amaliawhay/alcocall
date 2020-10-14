@@ -2,10 +2,11 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const keys = require("../../config/keys");
 
 //load input validation
 const validateRegisterInput = require("../../validation/register");
-const validateLoginInput = "../../validation/login";
+const validateLoginInput = require("../../validation/login");
 
 //load user model
 const User = require("../../models/User");
@@ -47,7 +48,7 @@ router.post("/register", (req, res) => {
               newUser.password = hash;
               newUser
                 .save()
-                .then((user) => res.jason(user))
+                .then((user) => res.json(user))
                 .catch((err) => console.log(err));
             }
           );
