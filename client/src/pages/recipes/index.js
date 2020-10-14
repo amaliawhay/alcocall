@@ -5,6 +5,9 @@ import TextInput from "../../component/textInput/textInput";
 import DrinkCard from "../../component/drinkCard/drinkCard";
 import DrinkButton from "../../component/button/button";
 
+var searchedIng = JSON.parse(localStorage.getItem("searchedFor")) || [];;
+
+
 class Recipes extends Component {
   constructor(props) {
     super(props);
@@ -18,7 +21,9 @@ class Recipes extends Component {
       show: false
     };
   }
+
 searchNonAlcoholic = () => {
+ 
   API.getNonAlcohol().then((res) => {
     const data = res.data.drinks;
 
@@ -100,6 +105,8 @@ searchNonAlcoholic = () => {
   
   handleInputChange = (event) => {
     const value = event.target.value;
+    console.log(event.target.value);
+    localStorage.setItem("searchedFor", JSON.stringify(searchedIng));
 
     this.setState({
       ...this.state,
@@ -125,6 +132,8 @@ searchNonAlcoholic = () => {
   }
   handleFormSubmit = (event) => {
     event.preventDefault();
+
+    
     this.setState({...this.state, show:true})
     this.searchIngredients(this.state.search);
   };
