@@ -38,6 +38,7 @@ app.use("/", routes);
 //app.use("/api/users", users);
 
 // Connect to MongoDB
+<<<<<<< HEAD
 mongoose
   .connect(
     process.env.MONGODB_URI ||
@@ -50,6 +51,9 @@ mongoose
     console.log("MongoDB successfully connected!")
   )
   .catch((err) => console.log(err));
+=======
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/");
+>>>>>>> 6e4c7c9b877d987364be5bc4d1b02df3a97d5c24
 
 //Start server
 app.listen(PORT, function () {

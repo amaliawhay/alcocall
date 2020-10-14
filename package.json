@@ -4,6 +4,7 @@
   "description": "Virtual Bartender",
   "main": "server.js",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.4.0",
     "axios": "^0.20.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
@@ -13,9 +14,13 @@
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "materialize-css": "^1.0.0",
+<<<<<<< HEAD
     "mongoose": "^5.10.7",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+=======
+    "mongoose": "^5.10.9",
+>>>>>>> 6e4c7c9b877d987364be5bc4d1b02df3a97d5c24
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-materialize": "^3.9.3",
