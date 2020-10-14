@@ -5,9 +5,6 @@ import TextInput from "../../component/textInput/textInput";
 import DrinkCard from "../../component/drinkCard/drinkCard";
 import DrinkButton from "../../component/button/button";
 
-var searchedIng = JSON.parse(localStorage.getItem("searchedFor")) || [];;
-
-
 class Recipes extends Component {
   constructor(props) {
     super(props);
@@ -21,9 +18,7 @@ class Recipes extends Component {
       show: false
     };
   }
-
 searchNonAlcoholic = () => {
- 
   API.getNonAlcohol().then((res) => {
     const data = res.data.drinks;
 
@@ -105,8 +100,6 @@ searchNonAlcoholic = () => {
   
   handleInputChange = (event) => {
     const value = event.target.value;
-    // console.log(event.target.value);
-    
 
     this.setState({
       ...this.state,
@@ -118,7 +111,6 @@ searchNonAlcoholic = () => {
     this.setState({...this.state, show:true})
     console.log(this.state);
     this.searchIngredients(event.target.id);
-    
     // console.log(this.children);
   };
   handleRandomButtonClick = (event) => {
@@ -133,12 +125,6 @@ searchNonAlcoholic = () => {
   }
   handleFormSubmit = (event) => {
     event.preventDefault();
-    var searchedForIng = [];
-    searchedForIng.push(this.state.search);
-    console.log(searchedForIng);
-    // searchedIng.push(searchedForIng);
-    localStorage.setItem("searchedFor", JSON.stringify(searchedIng));
-    
     this.setState({...this.state, show:true})
     this.searchIngredients(this.state.search);
   };
@@ -148,10 +134,7 @@ searchNonAlcoholic = () => {
       <div>
         <main className="container main-content">
                 <Row>
-                  <Col 
-                  s={3} m={3} l={3}
-                  className="push-s4 push-m4 push-l4
-                   right-align">
+                  <Col className="push-s4 push-m4 push-l4">
                   <h5 className="light-blue-text text-darken-1">
                 Select a Spirit!
               </h5>
@@ -249,15 +232,6 @@ searchNonAlcoholic = () => {
                 <Col>
                 </Col>
               </Row>
-
-              <Row>
-                  <Col className="push-s4 push-m4 push-l4 center-align">
-                  <h5 className="light-blue-text text-darken-1 center-align">
-                Or select an ingredient!
-              </h5>
-                  </Col>
-                
-                </Row>
               
            
             <Row>
