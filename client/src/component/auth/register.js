@@ -83,7 +83,7 @@ class Register extends Component {
                   id="age"
                   type="password"
                 />
-                <label htmlFor="age">Age</label>
+                <label htmlFor="age"></label>
               </div>
 
               <div
