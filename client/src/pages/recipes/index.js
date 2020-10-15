@@ -142,12 +142,13 @@ searchNonAlcoholic = () => {
       this.searchIngredients(this.state.search);
     } else {
       // console.log(searchedIng)
-      // var searchToLocal = this.state.search;
+      var searchToLocal = this.state.search;
       inputSearch.push(searchToLocal);
-      console.log(inputSearch)
+      // console.log(inputSearch)
       localStorage.setItem("searchedFor", JSON.stringify(inputSearch.toString().split(" ").join("_")));
-      console.log(inputSearch.toString().split(" ").join("_"))
-      this.searchIngredients(searchedIng)
+      console.log(JSON.stringify(inputSearch.toString().split(" ").join("_")))
+      this.searchIngredients(inputSearch.toString().split(" ").join("_"))
+      
     }
     
   };
@@ -256,7 +257,7 @@ searchNonAlcoholic = () => {
                 </Col>
               </Row>
               
-    <h3>{inputSearch}</h3>
+    <h3>{inputSearch.join(" ")}</h3>
             <Row>
               <Col 
               className="push-s3 push-m3 push-l3"

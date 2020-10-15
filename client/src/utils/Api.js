@@ -23,7 +23,7 @@ export default {
   },
   getMultiIng: function (ing) {
     return axios.get(
-      `https://www.thecocktaildb.com/api/json/${process.env.REACT_APP_COCKTAILS_API_KEY}/filter.php?i=` + ing
+      `https://www.thecocktaildb.com/api/json/${process.env.REACT_APP_COCKTAILS_API_KEY}/filter.php?i=${ing}`
     );
   }
 };
