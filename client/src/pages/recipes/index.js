@@ -7,7 +7,7 @@ import DrinkButton from "../../component/button/button";
 
 var searchedIng = JSON.parse(localStorage.getItem("searchedFor")) || [];
 var inputSearch = [];
-
+var poop = "";
 class Recipes extends Component {
   constructor(props) {
     super(props);
