@@ -49,7 +49,7 @@ class Register extends Component {
               </h4>
               <p className="grey-text text-darken-1">
                 Already have an account?{" "}
-                <Link to="/signIn">Sign in</Link>
+                <Link to="/login">Login</Link>
               </p>
             </div>
             <form noValidate onSubmit={this.onSubmit}>
@@ -83,7 +83,7 @@ class Register extends Component {
                   id="age"
                   type="password"
                 />
-                <label htmlFor="age"></label>
+                <label htmlFor="age">Age</label>
               </div>
 
               <div
