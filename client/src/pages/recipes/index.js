@@ -20,12 +20,14 @@ class Recipes extends Component {
       drinkInfo: {},
       drinkIng: {},
       drinkMeasurment: {},
-      show: false
+      show: false,
+      Randomshow:false
     };
   }
   clearLocal = (event) => {
     localStorage.clear();
     inputSearch.splice(0, inputSearch.length)
+    this.setState({...this.state, show:false, Randomshow:false, drinkInfo:""})
     // console.log(inputSearch)
   }
 searchNonAlcoholic = () => {
@@ -63,7 +65,7 @@ searchNonAlcoholic = () => {
         
       // console.log(ing);
 
-      this.setState({ ...this.state, drinkInfo: res.data.drinks[0], drinkIng: ing });
+      this.setState({ ...this.state, drinkInfo: res.data.drinks[0], drinkIng: ing, Randomshow: true });
       
     })
     .catch((err) => console.log(err));
@@ -111,7 +113,7 @@ searchNonAlcoholic = () => {
           }
         }
         // console.log(ing);
-        this.setState({ ...this.state, drinkInfo: res.data.drinks[0], drinkIng: ing });
+        this.setState({ ...this.state, drinkInfo: res.data.drinks[0], drinkIng: ing});
         
       })
       .catch((err) => console.log(err));
@@ -178,9 +180,9 @@ searchNonAlcoholic = () => {
       inputSearch.push(searchToLocal);
       // console.log(inputSearch)
       localStorage.setItem("searchedFor", JSON.stringify(inputSearch.toString().split(" ").join("_")));
-      console.log(JSON.stringify(inputSearch.toString().split(" ").join("_")))
+      // console.log(JSON.stringify(inputSearch.toString().split(" ").join("_")))
       this.searchIngredients(inputSearch.toString().split(" ").join("_"))
-      console.log(API.getMultiIng(inputSearch.toString().split(" ").join("_")))
+      // console.log(API.getMultiIng(inputSearch.toString().split(" ").join("_")))
      
     }
     
@@ -346,7 +348,7 @@ searchNonAlcoholic = () => {
                   )}
               </Col>
               <Col m={6} s={6} l={6}>
-              {this.state.drinkInfo.strDrink ? (
+              {this.state.drinkInfo.strDrink || this.state.Randomshow ? (
               <DrinkCard s={6} m={6} l={6}
                 directions={this.state.drinkInfo.strInstructions}
                 ing={this.state.drinkIng}
