@@ -75,14 +75,14 @@ searchNonAlcoholic = () => {
       .then((res) => {
         const data = res.data.drinks;
         // console.log(data);
-        // if (res.data.drinks === "None Found") {
-        //   console.log(noneFound)
-        //   noneFound=true;
-        //   localStorage.clear();
-        //   inputSearch.splice(0, inputSearch.length)
+        if (res.data.drinks === "None Found") {
+          console.log(noneFound)
+          noneFound=true;
+          // localStorage.clear();
+          // inputSearch.splice(0, inputSearch.length)
           
-        // }else{
-          // noneFound=false;
+        }else{
+          noneFound=false;
           // console.log(noneFound)
           this.setState({ ...this.state, result: data });
         const tempDrinkName = [];
@@ -91,7 +91,7 @@ searchNonAlcoholic = () => {
         }
         // return tempDrinkName;
         this.setState({ ...this.state, drinkName: tempDrinkName });
-        // }
+        }
 
         
       })
@@ -195,7 +195,7 @@ searchNonAlcoholic = () => {
                 <Row>
                   <Col className="push-s4 push-m4 push-l4">
                   <h5 className="light-blue-text text-darken-1">
-                Select a Spirit!
+                Click a Spirit, enter an ingredient you have in your bar, or Both!
               </h5>
                   </Col>
                 
