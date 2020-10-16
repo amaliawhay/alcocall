@@ -19,32 +19,32 @@ function footer() {
               <h5 className="light-blue-text text-darken-1">Links</h5>
               <ul>
                 <li>
-                  <Link className="footer-a" to="index">
+                  <Link className="footer-a" to="index" alt="Home">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link className="footer-a" to="recipes" alt="">
+                  <Link className="footer-a" to="recipes" alt="Recipes">
                     Recipes
                   </Link>
                 </li>
                 <li>
-                  <Link className="footer-a" to="bars">
+                  <Link className="footer-a" to="bars" alt="Bar Search">
                     Bars
                   </Link>
                 </li>
                 <li>
-                  <Link className="footer-a" to="breweries">
+                  <Link className="footer-a" to="breweries" alt="Brewery Search">
                     Breweries
                   </Link>
                 </li>
                 <li>
-                  <Link className="footer-a" to="references">
+                  <Link className="footer-a" to="references" alt="Resources">
                     Resources
                   </Link>
                 </li>
                 <li>
-                  <Link className="footer-a" to="/">
+                  <Link className="footer-a" to="signin" alt="Login/Sign up">
                     Login
                   </Link>
                 </li>

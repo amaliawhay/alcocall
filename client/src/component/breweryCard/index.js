@@ -8,7 +8,7 @@ function breweryCard() {
         <Col m={12} s={12}>
           <Card
             actions={[
-              <a className="btn light-blue darken-1" key="1" href="breweries">
+              <a className="btn light-blue darken-1 card-buttons" key="1" href="breweries">
                 Find a local brewery
               </a>
             ]}

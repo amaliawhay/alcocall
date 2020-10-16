@@ -8,8 +8,8 @@ function RandomCard() {
         <Col m={12} s={12}>
           <Card
             actions={[
-              <a className="btn light-blue darken-1" key="1" href="recipes">
-                Random Drink
+              <a className="btn light-blue darken-1 card-buttons" key="1" href="recipes">
+                Find a drink
               </a>
             ]}
             closeIcon={<Icon>close</Icon>}

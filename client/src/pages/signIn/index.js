@@ -1,6 +1,6 @@
 import React from "react";
 
-function singin() {
+function signin() {
   return (
     <div>
       <main className="container main-content">
@@ -25,4 +25,4 @@ function singin() {
     </div>
   );
 }
-export default singin;
+export default signin;

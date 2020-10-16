@@ -8,9 +8,9 @@ function BarCard() {
     <div>
       <Row>
         <Col m={12} s={12}>
-          <Card
+          <Card 
             actions={[
-              <a className="btn light-blue darken-1" key="1" href="bars">
+              <a className="btn light-blue darken-1 card-buttons" key="1" href="bars">
                 Find me a bartender!
               </a>
             ]}
@@ -25,7 +25,6 @@ function BarCard() {
                     fontSize: "large"
                   }}
                 >
-                  Bar Search
                 </Link>
               </CardTitle>
             }

@@ -1,6 +1,7 @@
 /* Classes ------------------------- */
+@import url('https://fonts.googleapis.com/css?family=BenchNine&display=swap');
 
-.body {
+body {
   margin: 0;
   padding: 0;
   font-family: BenchNine, sans-serif;
@@ -73,8 +74,10 @@ a:hover {
 }
 
 .brand-logo {
-  margin-top: 10px;
+  margin-top: 20px;
+  /* margin-bottom: 30px; */
   padding-top: 5px;
+  padding-bottom: 20px;
 }
 
 .main-text-section {
@@ -84,7 +87,7 @@ a:hover {
 .main-text {
   padding-left: 25px;
   padding-right: 25px;
-  font-family: "BenchNine", serif;
+  font-family: BenchNine, serif;
 }
 
 .card-title {
