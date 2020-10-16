@@ -14,12 +14,8 @@ class Recipes extends Component {
       drinkName: [],
       drinkInfo: {},
       drinkIng: {},
-<<<<<<< HEAD
-      drinkMeasurment: {}
-=======
       drinkMeasurment: {},
       show: false
->>>>>>> main
     };
   }
 searchNonAlcoholic = () => {
@@ -147,47 +143,27 @@ searchNonAlcoholic = () => {
                 </Row>
               
 
-<<<<<<< HEAD
-              <div className="row drink-wrapper">
-                <div  className="col s4 m4 l4">
-=======
               <Row>
                 <Col s={3} m={3} l={3}>
->>>>>>> main
                 <DrinkButton
                     onClick={this.handleButtonClick}
                     type="success"
                     className="input-lg"
                   >
                     Vodka
-<<<<<<< HEAD
-                  </DrinkButton>
-                </div>
-
-                <div  className="col s4 m4 l4">
-                  <DrinkButton
-=======
                   </DrinkButton>                              
                 </Col>
                 <Col s={3} m={3} l={3}>
                 <DrinkButton
->>>>>>> main
                     onClick={this.handleButtonClick}
                     type="success"
                     className="input-lg"
                   >
                     Rum
                   </DrinkButton>
-<<<<<<< HEAD
-                </div>
-
-                <div  className="col s4 m4 l4">
-                  <DrinkButton
-=======
                 </Col>
                 <Col s={3} m={3} l={3}>                
                 <DrinkButton
->>>>>>> main
                     onClick={this.handleButtonClick}
                     type="success"
                     className="input-lg"
@@ -202,11 +178,7 @@ searchNonAlcoholic = () => {
                   >
                     Gin
                   </DrinkButton>
-<<<<<<< HEAD
-                </div>
-=======
                 </Col>
->>>>>>> main
 
               </Row>
               <Row>
@@ -218,27 +190,15 @@ searchNonAlcoholic = () => {
                   >
                     Tequila
                   </DrinkButton>
-<<<<<<< HEAD
-                </div>
-
-                <div  className="col s4 m4 l4">
-                  <DrinkButton
-=======
                 </Col>
                 <Col s={3} m={3} l={3}>
                 <DrinkButton
->>>>>>> main
                     onClick={this.handleRandomButtonClick}
                     type="success"
                     className="input-lg"
                   >
                     Random
                   </DrinkButton>
-<<<<<<< HEAD
-                </div>
-              </div>
-            </div>
-=======
                 </Col>
                 <Col s={3} m={3} l={3}>
                 <DrinkButton
@@ -274,7 +234,6 @@ searchNonAlcoholic = () => {
               </Row>
               
            
->>>>>>> main
             <Row>
               <Col 
               className="push-s3 push-m3 push-l3"
@@ -298,10 +257,6 @@ searchNonAlcoholic = () => {
                 </Button>
               </Col>
             </Row>
-<<<<<<< HEAD
-            {this.state.drinkInfo.strDrink ? (
-              <DrinkCard
-=======
             
             <Row>
             <Col m={6} s={6} l={6}>  
@@ -329,7 +284,6 @@ searchNonAlcoholic = () => {
               <Col m={6} s={6} l={6}>
               {this.state.drinkInfo.strDrink ? (
               <DrinkCard s={6} m={6} l={6}
->>>>>>> main
                 directions={this.state.drinkInfo.strInstructions}
                 ing={this.state.drinkIng}
                 image={this.state.drinkInfo.strDrinkThumb}
@@ -338,32 +292,6 @@ searchNonAlcoholic = () => {
             ) : (
               ""
             )}
-<<<<<<< HEAD
-          </div>
-          <Card s={12}>
-            {this.state.drinkName.map((drink) => {
-              return (
-                <Button
-                  flat
-                  node="button"
-                   waves="light"
-                   key={drink.id}
-                  onClick={() => this.setState(this.specificDrink(drink.id))}
-                >
-                  {drink.name}
-
-  
-                </Button>
-                                
-                              )
-                            })}
-                          </Card>
-                        </main>
-                      </div>
-                    );
-                  }
-                }
-=======
               </Col>
                         
             </Row>            
@@ -373,5 +301,4 @@ searchNonAlcoholic = () => {
     );
   }
 }
->>>>>>> main
 export default Recipes;
