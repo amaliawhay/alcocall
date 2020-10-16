@@ -32,7 +32,7 @@
 a {
   font-family: BenchNine, serif;
   color: white;
-  font-size: large;
+  font-size: 30em;
 }
 
 .resource-a {
@@ -75,6 +75,7 @@ a:hover {
 .brand-logo {
   margin-top: 10px;
   padding-top: 5px;
+  margin-bottom: 10px;
 }
 
 .main-text-section {
