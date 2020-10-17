@@ -77,22 +77,13 @@ searchNonAlcoholic = () => {
         const data = res.data.drinks;
         // console.log(data);
         if (res.data.drinks === "None Found") {
-<<<<<<< HEAD
           // console.log(noneFound)
-         this.setState({...this.state, noneFound: true})
-=======
-          console.log(noneFound)
-          noneFound=true;
->>>>>>> main
+          this.setState({...this.state, noneFound: true})
           // localStorage.clear();
           // inputSearch.splice(0, inputSearch.length)
           
         }else{
-<<<<<<< HEAD
           // this.setState({...this.state, noneFound: true})
-=======
-          noneFound=false;
->>>>>>> main
           // console.log(noneFound)
           this.setState({ ...this.state, result: data });
         const tempDrinkName = [];
