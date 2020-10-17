@@ -7,8 +7,8 @@ import { registerUser } from "../../app/actions/authActions";
 import classnames from "classnames";
 
 class Register extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       userName: "",
       password: "",
@@ -52,6 +52,7 @@ class Register extends Component {
   };
 
   render() {
+    const { errors } = this.state;
     return (
       <div className="container">
         <div className="row">
