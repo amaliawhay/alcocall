@@ -15,6 +15,13 @@ class Login extends Component {
     };
   }
 
+  componentDidMount() {
+    // If logged in and user navigates to Login page, should redirect them to dashboard
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
       this.props.history.push("/index"); //push user to home page when they login
@@ -124,7 +131,7 @@ class Login extends Component {
   }
 }
 
-Login.PropTypes = {
+Login.propTypes = {
   loginUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired,
