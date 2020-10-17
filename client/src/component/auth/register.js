@@ -18,9 +18,13 @@ class Register extends Component {
     };
   }
 
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (prevState)
-  // }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({
+        errors: nextProps.errors,
+      });
+    }
+  }
 
   onChange = (e) => {
     this.setState({ [e.target.id]: e.target.value });
@@ -76,6 +80,9 @@ class Register extends Component {
                   })}
                 />
                 <label htmlFor="userName">Username</label>
+                <span className="red-text">
+                  {errors.userName}
+                </span>
               </div>
 
               <div className="input-field col s12">
@@ -85,8 +92,14 @@ class Register extends Component {
                   error={errors.password}
                   id="password"
                   type="password"
+                  className={classnames("", {
+                    invalid: errors.password,
+                  })}
                 />
                 <label htmlFor="password">Password</label>
+                <span className="red-text">
+                  {errors.password}
+                </span>
               </div>
 
               <div className="input-field col s12">
@@ -95,9 +108,14 @@ class Register extends Component {
                   value={this.state.age}
                   error={errors.age}
                   id="age"
-                  type="password"
+                  className={classnames("", {
+                    invalid: errors.age,
+                  })}
                 />
                 <label htmlFor="age">Age</label>
+                <span className="red-text">
+                  {errors.age}
+                </span>
               </div>
 
               <div
