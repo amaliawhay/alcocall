@@ -7,10 +7,8 @@ import "materialize-css";
 import "materialize-css/dist/css/materialize.min.css";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById("root")
 );

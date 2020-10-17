@@ -1,5 +1,5 @@
 import axios from "axios";
-import setAuthToken from "../app/utils/setAuthToken";
+import setAuthToken from "../../utils/setAuthToken";
 import jwt_decode from "jwt-decode";
 
 import {
@@ -18,7 +18,7 @@ export const registerUser = (userData, history) => (
     .catch((err) =>
       dispatch({
         type: GET_ERRORS,
-        payload: err.response.data,
+        payload: err.response,
       })
     );
 };
@@ -43,7 +43,7 @@ export const loginUser = (userData) => (dispatch) => {
     .catch((err) =>
       dispatch({
         type: GET_ERRORS,
-        payload: err.response.data,
+        payload: err.response,
       })
     );
 };

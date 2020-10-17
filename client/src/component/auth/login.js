@@ -22,7 +22,7 @@ class Login extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
       this.props.history.push("/index"); //push user to home page when they login
     }
@@ -77,7 +77,7 @@ class Login extends Component {
                   onChange={this.onChange}
                   value={this.state.userName}
                   error={errors.userName}
-                  id="username"
+                  id="userName"
                   type="text"
                   className={classnames("", {
                     invalid:

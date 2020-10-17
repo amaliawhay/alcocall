@@ -25,11 +25,13 @@ class Register extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    console.log(nextProps.errors);
     if (nextProps.errors) {
       this.setState({
         errors: nextProps.errors,
       });
+      console.log(this.state.errors);
     }
   }
 
@@ -47,12 +49,13 @@ class Register extends Component {
       age: this.state.age,
     };
 
-    //console.log(newUser);
+    console.log(newUser);
     this.props.registerUser(newUser, this.props.history);
   };
 
   render() {
     const { errors } = this.state;
+
     return (
       <div className="container">
         <div className="row">
@@ -111,6 +114,7 @@ class Register extends Component {
               </div>
 
               <div className="input-field col s12">
+                <h6>Please enter your age</h6>
                 <input
                   onChange={this.onChange}
                   value={this.state.age}
@@ -120,7 +124,7 @@ class Register extends Component {
                     invalid: errors.age,
                   })}
                 />
-                <label htmlFor="age">Age</label>
+                {/* <label htmlFor="username">Age</label> */}
                 <span className="red-text">
                   {errors.age}
                 </span>

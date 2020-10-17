@@ -19,7 +19,7 @@ class Dashboard extends Component {
       >
         <div className="row">
           <div className="col s12 center-align">
-            <h4>Your Favorite Cocktails</h4>
+            <h4>{user} Favorite Cocktails</h4>
             <button
               style={{
                 width: "150px",
