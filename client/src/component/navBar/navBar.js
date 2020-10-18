@@ -35,8 +35,8 @@ function Navbar1() {
         <NavItem href="breweries">Breweries</NavItem>
         <NavItem href="bars">Bars</NavItem>
         <NavItem href="references">Resources</NavItem>
-        <NavItem href="signin" class="btn-floating light-blue darken-1 zed-depth-0" alt="Login">
-        <i class="material-icons">person</i>
+        <NavItem href="signin" className="btn-floating light-blue darken-1 zed-depth-0" alt="Login">
+        <i className="material-icons">person</i>
         </NavItem>
       </Navbar>
     </div>
