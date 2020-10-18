@@ -133,48 +133,49 @@ searchNonAlcoholic = () => {
     return (
       <div>
         <main className="container main-content">
-                <Row>
-                  <Col className="push-s4 push-m4 push-l4">
-                  <h5 className="light-blue-text text-darken-1">
-                Select a Spirit!
-              </h5>
-                  </Col>
-                
-                </Row>
+              <Row>
+                <Col className="push-s4 push-m4 push-l4">
+                  <h2 className="center-align light-blue-text text-darken-1">Select a Spirit!</h2>
+                </Col>
+              </Row>
               
 
               <Row>
-                <Col s={3} m={3} l={3}>
+                <Col s={12} m={3} l={3}>
+                  <img className="bottle-image" src="./assets/images/vodka_bottle.jpg"></img>
                 <DrinkButton
                     onClick={this.handleButtonClick}
                     type="success"
-                    className="input-lg"
+                    className="input-lg recipe-button"
                   >
                     Vodka
                   </DrinkButton>                              
                 </Col>
-                <Col s={3} m={3} l={3}>
+                <Col s={12} m={3} l={3}>
+                  <img className="bottle-image responsive-img" src="./assets/images/rum_bottle.jpg"></img>
                 <DrinkButton
                     onClick={this.handleButtonClick}
                     type="success"
-                    className="input-lg"
+                    className="input-lg recipe-button"
                   >
                     Rum
                   </DrinkButton>
                 </Col>
-                <Col s={3} m={3} l={3}>                
+                <Col s={12} m={3} l={3}>
+                <img className="bottle-image" src="./assets/images/whiskey_bottle.jpg"></img>              
                 <DrinkButton
                     onClick={this.handleButtonClick}
                     type="success"
-                    className="input-lg"
+                    className="input-lg recipe-button"
                   >
                     Whiskey
                   </DrinkButton></Col>
-                <Col s={3} m={3} l={3}>
+                <Col s={12} m={3} l={3}>
+                <img className="bottle-image" src="./assets/images/gin_bottle.jpg"></img>   
                 <DrinkButton
                     onClick={this.handleButtonClick}
                     type="success"
-                    className="input-lg"
+                    className="input-lg recipe-button"
                   >
                     Gin
                   </DrinkButton>
@@ -182,61 +183,54 @@ searchNonAlcoholic = () => {
 
               </Row>
               <Row>
-                <Col s={3} m={3} l={3}>
+                <Col s={12} m={3} l={3}>
+                <img className="bottle-image" src="./assets/images/tequila_bottle.jpg"></img>
                 <DrinkButton
                     onClick={(event) => this.handleButtonClick(event)}
                     type="success"
-                    className="input-lg"
+                    className="input-lg recipe-button"
                   >
                     Tequila
                   </DrinkButton>
                 </Col>
-                <Col s={3} m={3} l={3}>
-                <DrinkButton
-                    onClick={this.handleRandomButtonClick}
-                    type="success"
-                    className="input-lg"
-                  >
-                    Random
-                  </DrinkButton>
-                </Col>
-                <Col s={3} m={3} l={3}>
+                
+                <Col s={12} m={3} l={3}>
+                <img className="bottle-image" src="./assets/images/bourbon_bottle.jpg"></img>
                 <DrinkButton
                     onClick={this.handleButtonClick}
                     type="success"
-                    className="input-lg"
+                    className="input-lg recipe-button"
                   >
                     Bourbon
                   </DrinkButton>
                 </Col>
-                <Col s={3} m={3} l={3}>
+                <Col s={12} m={3} l={3}>
+                <img className="bottle-image" src="./assets/images/non_alcohol.jpg"></img>
                 <DrinkButton
                     onClick={this.handleNonAlcoholicButton}
                     type="success"
-                    className="input-lg"
+                    className="input-lg recipe-button"
                   >
                     Non-Alcoholic
                   </DrinkButton>
                 </Col>
+                <Col s={12} m={3} l={3}>
+                <img className="bottle-image" src="./assets/images/random_drink.jpg"></img>
+                <DrinkButton
+                    onClick={this.handleRandomButtonClick}
+                    type="success"
+                    className="input-lg recipe-button"
+                  >
+                    Random Drink
+                  </DrinkButton>
+                </Col>
               </Row>
 
-              <Row>
-                <Col>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                </Col>
-              </Row>
               
            
-            <Row>
+            <Row className="">
               <Col 
-              className="push-s3 push-m3 push-l3"
+              className="left-align push-s3 push-m3 push-l3"
               s={6} m={6} l={6}>
               
                 <TextInput 
@@ -250,7 +244,7 @@ searchNonAlcoholic = () => {
                 
               
               <Button
-              className="btn light-blue darken-1 btn:hover pulse drink-wrapper-buttons valign-wrapper"
+              className="recipe-button btn light-blue darken-1 btn:hover pulse drink-wrapper-buttons valign-wrapper"
               onClick={(event) => this.handleFormSubmit(event)}
               >
                 Search

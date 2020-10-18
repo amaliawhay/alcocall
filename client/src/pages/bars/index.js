@@ -13,8 +13,8 @@ function bars() {
             </a>
           </div>
           <div className="card-content">
-            <span className="card-title light-blue-text text-darken-1">Bar Locater</span>
-            <p>Get Bar Hopping!</p>
+            <h4 className="center-align h4 light-blue-text text-darken-1">Bar Locater</h4>
+            <p className="center-align">Get Bar Hopping!</p>
           </div>
           <div className="card-action center-align">
           <a class="btn light-blue darken-1 card-buttons" href="https://www.google.com/search?q=bars+near+me&amp;oq=bars+near+me&amp;aqs=chrome..69i57.1608j0j7&amp;sourceid=chrome&amp;ie=UTF-8">Find a local bar</a>
@@ -22,8 +22,8 @@ function bars() {
         </div>
       </div>
       <div className="">
-        <h5 className="light-blue-text text-darken-1">Please Drink Responsibly!</h5>
-        <p>
+        <h4 className="center-align light-blue-text text-darken-1">Please Drink Responsibly!</h4>
+        <p className="center-align">
           Have you already started drinking? Call a rideshare app or a friend to
           take you on the next journey of your adventure!
         </p>
