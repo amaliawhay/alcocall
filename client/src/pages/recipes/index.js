@@ -191,22 +191,14 @@ searchNonAlcoholic = () => {
     return (
       <div>
         <main className="container main-content">
-<<<<<<< HEAD
-              <Row>
-                <Col className="push-s4 push-m4 push-l4">
-                  <h2 className="center-align light-blue-text text-darken-1">Select a Spirit!</h2>
-                </Col>
-              </Row>
-=======
                 <Row>
                   <Col className="push-s4 push-m4 push-l4">
-                  <h5 className="light-blue-text text-darken-1">
+                  <h2 className="center-align light-blue-text text-darken-1">
                 Click a Spirit, enter an ingredient you have in your bar, or Both!
-              </h5>
+              </h2>
                   </Col>
                 
                 </Row>
->>>>>>> main
               
 
               <Row>
@@ -296,14 +288,9 @@ searchNonAlcoholic = () => {
               </Row>
 
               
-<<<<<<< HEAD
-           
-            <Row className="">
-=======
     <h3>{inputSearch.join(" ")}</h3>
             <Row>
               
->>>>>>> main
               <Col 
               className="left-align push-s3 push-m3 push-l3"
               s={6} m={6} l={6}>
