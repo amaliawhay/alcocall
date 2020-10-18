@@ -4,6 +4,11 @@ import { Row, Col, Card, Button } from "react-materialize";
 import TextInput from "../../component/textInput/textInput";
 import DrinkCard from "../../component/drinkCard/drinkCard";
 import DrinkButton from "../../component/button/button";
+import textInput from "../../component/textInput/textInput";
+
+var searchedIng = JSON.parse(localStorage.getItem("searchedFor")) || [];
+var inputSearch = [];
+// var noneFound = false;
 
 class Recipes extends Component {
   constructor(props) {
@@ -15,8 +20,16 @@ class Recipes extends Component {
       drinkInfo: {},
       drinkIng: {},
       drinkMeasurment: {},
-      show: false
+      show: false,
+      Randomshow:false,
+      noneFound:false
     };
+  }
+  clearLocal = (event) => {
+    localStorage.clear();
+    inputSearch.splice(0, inputSearch.length)
+    this.setState({...this.state, show:false, Randomshow:false, drinkInfo:"",noneFound:false})
+    // console.log(inputSearch)
   }
 searchNonAlcoholic = () => {
   API.getNonAlcohol().then((res) => {
@@ -35,72 +48,74 @@ searchNonAlcoholic = () => {
 }
   searchRandom = () =>  {
     API.getRandom().then((res) => {
+      // localStorage.clear();
+      // localStorage.removeItem("searchedFor");
       var ing = [];
       
-      console.log(res.data.drinks[0]);
+      // console.log(res.data.drinks[0]);
       for (let i = 1; i < 16; i++){
         if (res.data.drinks[0]['strIngredient' + [i]] === null && res.data.drinks[0]['strMeasure' + [i]] === null) {
         }else if (res.data.drinks[0]['strMeasure' + [i]] === null){
           ing.push(res.data.drinks[0]['strIngredient' + [i]]);
-        }
-        
-        else {
+        }else {
           ing.push(res.data.drinks[0]['strMeasure' + [i]]  + " " + res.data.drinks[0]['strIngredient' + [i]]);
           
 
         }
       }
-      console.log(ing);
+        
+      // console.log(ing);
 
-      this.setState({ ...this.state, drinkInfo: res.data.drinks[0], drinkIng: ing });
+      this.setState({ ...this.state, drinkInfo: res.data.drinks[0], drinkIng: ing, Randomshow: true });
       
     })
     .catch((err) => console.log(err));
   };           
   searchIngredients = (query) => {
-    API.getIngs(query)
+    API.getMultiIng(query)
       .then((res) => {
         const data = res.data.drinks;
-
-        this.setState({ ...this.state, result: data });
+        // console.log(data);
+        if (res.data.drinks === "None Found") {
+          // console.log()
+          this.setState({...this.state, noneFound: true, show: false})
+          // localStorage.clear();
+          // inputSearch.splice(0, inputSearch.length)         
+        }else{
+          // this.setState({...this.state, noneFound: true})
+          // console.log(noneFound)
+          
+          this.setState({ ...this.state, drinkInfo: data });
         const tempDrinkName = [];
         for (var i = 0; i < data.length; i++) {
           tempDrinkName.push({ name: data[i].strDrink, id: data[i].idDrink });
         }
-        // return tempDrinkName;
         this.setState({ ...this.state, drinkName: tempDrinkName });
+        }       
       })
       .catch((err) => console.log(err));
   };
   specificDrink = (query) => {
     API.getId(query)
       .then((res) => {
-        var ing = [];
-        
-        console.log(res.data.drinks[0]);
+        var ing = [];        
+        // console.log(res.data.drinks[0]);
         for (let i = 1; i < 16; i++){
           if (res.data.drinks[0]['strIngredient' + [i]] === null && res.data.drinks[0]['strMeasure' + [i]] === null) {
           }else if (res.data.drinks[0]['strMeasure' + [i]] === null){
-
-          }
-          
-          else {
-            ing.push(res.data.drinks[0]['strMeasure' + [i]] +  " " + res.data.drinks[0]['strIngredient' + [i]]);
-            
-
+          }           
+          else {            
+            ing.push(res.data.drinks[0]['strMeasure' + [i]] +  " " + res.data.drinks[0]['strIngredient' + [i]]);            
           }
         }
-        console.log(ing);
-
-        this.setState({ ...this.state, drinkInfo: res.data.drinks[0], drinkIng: ing });
-        
+        this.setState({ ...this.state, drinkInfo: res.data.drinks[0], drinkIng: ing});        
       })
       .catch((err) => console.log(err));
   };
   
   handleInputChange = (event) => {
     const value = event.target.value;
-
+    
     this.setState({
       ...this.state,
       search: value
@@ -108,36 +123,90 @@ searchNonAlcoholic = () => {
   };
   handleButtonClick = (event) => {
     event.preventDefault();
+    
+    var searchToLocal = event.target.id;
+      inputSearch.push(searchToLocal);
+    localStorage.setItem("searchedFor", JSON.stringify(inputSearch));
     this.setState({...this.state, show:true})
-    console.log(this.state);
-    this.searchIngredients(event.target.id);
+    // console.log(inputSearch);
+    this.searchIngredients(inputSearch);
+
+    
     // console.log(this.children);
   };
-  handleRandomButtonClick = (event) => {
-    event.preventDefault();
-    console.log(event.target);
-    this.searchRandom();
-  }
+  
   handleNonAlcoholicButton = (event) => {
     event.preventDefault();
-    this.setState({...this.state, show:true})
+    this.setState({...this.state, show:true, noneFound: false})
+    
     this.searchNonAlcoholic();
   }
-  handleFormSubmit = (event) => {
+  handleRandomButtonClick = (event) => {
     event.preventDefault();
+    this.setState({...this.state, show: false, noneFound: false})
+    // console.log(event.target);
+    this.searchRandom();
+  }
+  
+  handleFormSubmit = (event) => {
+    // event.preventDefault();  
+      
     this.setState({...this.state, show:true})
-    this.searchIngredients(this.state.search);
+    // this.searchIngredients(this.state.search);
+    // var inputSearch = ;
+    // console.log(noneFound)
+    //     if(noneFound === true){
+    //       inputSearch.push("no result") 
+    // }
+     if (inputSearch.length < 1) {
+      // console.log(searchedIng)
+      var searchToLocal = this.state.search;
+      inputSearch.push(searchToLocal);
+      // console.log(inputSearch)
+      localStorage.setItem("searchedFor", JSON.stringify(inputSearch));
+      // console.log(inputSearch.toString().split(" ").join("_"))
+      this.searchIngredients(this.state.search);
+      // TextInput.value.clear()
+      document.getElementById("TextInput-4").value = "";
+    } 
+    
+    else 
+    
+    
+    {
+      // console.log(searchedIng)
+      var searchToLocal = this.state.search;
+      inputSearch.push(searchToLocal);
+      // console.log(inputSearch)
+      localStorage.setItem("searchedFor", JSON.stringify(inputSearch.toString().split(" ").join("_")));
+      // console.log(JSON.stringify(inputSearch.toString().split(" ").join("_")))
+      this.searchIngredients(inputSearch.toString().split(" ").join("_"))
+      // console.log(API.getMultiIng(inputSearch.toString().split(" ").join("_")))
+     
+    }
+    
   };
 
   render() {
     return (
       <div>
         <main className="container main-content">
+<<<<<<< HEAD
               <Row>
                 <Col className="push-s4 push-m4 push-l4">
                   <h2 className="center-align light-blue-text text-darken-1">Select a Spirit!</h2>
                 </Col>
               </Row>
+=======
+                <Row>
+                  <Col className="push-s4 push-m4 push-l4">
+                  <h5 className="light-blue-text text-darken-1">
+                Click a Spirit, enter an ingredient you have in your bar, or Both!
+              </h5>
+                  </Col>
+                
+                </Row>
+>>>>>>> main
               
 
               <Row>
@@ -227,15 +296,21 @@ searchNonAlcoholic = () => {
               </Row>
 
               
+<<<<<<< HEAD
            
             <Row className="">
+=======
+    <h3>{inputSearch.join(" ")}</h3>
+            <Row>
+              
+>>>>>>> main
               <Col 
               className="left-align push-s3 push-m3 push-l3"
               s={6} m={6} l={6}>
               
                 <TextInput 
                 className="valign-wrapper"
-                  
+                  id="TextInput"
                   
                   value={this.state.search}
                   handleInputChange={this.handleInputChange}
@@ -249,12 +324,33 @@ searchNonAlcoholic = () => {
               >
                 Search
                 </Button>
+
+                <Button
+              className="btn light-blue darken-1 btn:hover pulse drink-wrapper-buttons valign-wrapper"
+              onClick={(event) => this.clearLocal(event)}
+              >
+                Clear Search
+                </Button>
               </Col>
             </Row>
             
             <Row>
-            <Col m={6} s={6} l={6}>  
+            <Col 
+            className="push-s3 push-m3 push-l3"
+            m={6} s={6} l={6}>  
+                  {this.state.noneFound ? (
+                    
+                    <Card>No result</Card>
+                  ) : (
+                    ""
+                  )}
                   
+            </Col>
+            </Row>
+            <Row>
+            <Col 
+            m={6} s={6} l={6}>  
+
                   {this.state.show ? (
                   <Card m={6} s={6} l={6}>
                   {this.state.drinkName.map((drink) => {
@@ -276,7 +372,7 @@ searchNonAlcoholic = () => {
                   )}
               </Col>
               <Col m={6} s={6} l={6}>
-              {this.state.drinkInfo.strDrink ? (
+              {this.state.drinkInfo.strDrink || this.state.Randomshow ? (
               <DrinkCard s={6} m={6} l={6}
                 directions={this.state.drinkInfo.strInstructions}
                 ing={this.state.drinkIng}

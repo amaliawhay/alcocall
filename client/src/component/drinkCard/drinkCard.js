@@ -18,7 +18,7 @@ function DrinkCard(props) {
               <div>
              
             <ul> {props.ing.map(element => {
-              console.log(element)
+              // console.log(element)
               return (
                 <li key={element}>
                   {element}

@@ -5,6 +5,7 @@ import store from "./app/store";
 import { Provider } from "react-redux";
 import "materialize-css";
 import "materialize-css/dist/css/materialize.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
