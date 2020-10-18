@@ -164,7 +164,6 @@ h2 {
 .h3 {
   font-family: BenchNine, sans-serif;
   color:#039be5;
-  font-weight: ;
   margin-top: 0px;
   top: 0px;
 }
@@ -269,9 +268,3 @@ h5 {
 .card-content {
   font-family: BenchNine, sans-serif;
 }
-
-
-/* h5 {
-    color: dimgray;
-    font-weight: bold;
-  } */
