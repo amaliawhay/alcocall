@@ -8,7 +8,7 @@ function nonalcoholicButton() {
         className="btn light-blue darken-1 btn:hover pulse drink-wrapper-buttons"
         node="button"
         style={{
-          marginRight: "5px"
+          marginRight: "5px",
         }}
         waves="light"
       >
