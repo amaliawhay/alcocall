@@ -77,24 +77,21 @@ searchNonAlcoholic = () => {
         const data = res.data.drinks;
         // console.log(data);
         if (res.data.drinks === "None Found") {
-          // console.log(noneFound)
-          this.setState({...this.state, noneFound: true})
+          // console.log()
+          this.setState({...this.state, noneFound: true, show: false})
           // localStorage.clear();
-          // inputSearch.splice(0, inputSearch.length)
-          
+          // inputSearch.splice(0, inputSearch.length)         
         }else{
           // this.setState({...this.state, noneFound: true})
           // console.log(noneFound)
-          this.setState({ ...this.state, result: data });
+          
+          this.setState({ ...this.state, drinkInfo: data });
         const tempDrinkName = [];
         for (var i = 0; i < data.length; i++) {
           tempDrinkName.push({ name: data[i].strDrink, id: data[i].idDrink });
         }
-        // return tempDrinkName;
         this.setState({ ...this.state, drinkName: tempDrinkName });
-        }
-
-        
+        }       
       })
       .catch((err) => console.log(err));
   };
@@ -106,16 +103,12 @@ searchNonAlcoholic = () => {
         for (let i = 1; i < 16; i++){
           if (res.data.drinks[0]['strIngredient' + [i]] === null && res.data.drinks[0]['strMeasure' + [i]] === null) {
           }else if (res.data.drinks[0]['strMeasure' + [i]] === null){
-          } 
-          
-          else {
-            
+          }           
+          else {            
             ing.push(res.data.drinks[0]['strMeasure' + [i]] +  " " + res.data.drinks[0]['strIngredient' + [i]]);            
           }
         }
-        // console.log(ing);
-        this.setState({ ...this.state, drinkInfo: res.data.drinks[0], drinkIng: ing});
-        
+        this.setState({ ...this.state, drinkInfo: res.data.drinks[0], drinkIng: ing});        
       })
       .catch((err) => console.log(err));
   };
@@ -135,28 +128,30 @@ searchNonAlcoholic = () => {
       inputSearch.push(searchToLocal);
     localStorage.setItem("searchedFor", JSON.stringify(inputSearch));
     this.setState({...this.state, show:true})
-    console.log(inputSearch);
+    // console.log(inputSearch);
     this.searchIngredients(inputSearch);
 
     
     // console.log(this.children);
   };
+  
+  handleNonAlcoholicButton = (event) => {
+    event.preventDefault();
+    this.setState({...this.state, show:true, noneFound: false})
+    
+    this.searchNonAlcoholic();
+  }
   handleRandomButtonClick = (event) => {
     event.preventDefault();
+    this.setState({...this.state, show: false, noneFound: false})
     // console.log(event.target);
     this.searchRandom();
   }
-  handleNonAlcoholicButton = (event) => {
-    event.preventDefault();
-    this.setState({...this.state, show:true})
-    this.searchNonAlcoholic();
-  }
+  
   handleFormSubmit = (event) => {
     // event.preventDefault();  
-     if (this.state.noneFound=false){
-      this.setState({...this.state, show:true})
-     }
-    
+      
+    this.setState({...this.state, show:true})
     // this.searchIngredients(this.state.search);
     // var inputSearch = ;
     // console.log(noneFound)
@@ -170,7 +165,7 @@ searchNonAlcoholic = () => {
       // console.log(inputSearch)
       localStorage.setItem("searchedFor", JSON.stringify(inputSearch));
       // console.log(inputSearch.toString().split(" ").join("_"))
-      this.searchIngredients(inputSearch);
+      this.searchIngredients(this.state.search);
       // TextInput.value.clear()
       document.getElementById("TextInput-4").value = "";
     } 
@@ -330,14 +325,21 @@ searchNonAlcoholic = () => {
             </Row>
             
             <Row>
-            <Col m={6} s={6} l={6}>  
+            <Col 
+            className="push-s3 push-m3 push-l3"
+            m={6} s={6} l={6}>  
                   {this.state.noneFound ? (
                     
                     <Card>No result</Card>
                   ) : (
                     ""
                   )}
-
+                  
+            </Col>
+            </Row>
+            <Row>
+            <Col 
+            m={6} s={6} l={6}>  
 
                   {this.state.show ? (
                   <Card m={6} s={6} l={6}>
