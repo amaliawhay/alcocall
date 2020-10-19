@@ -29,8 +29,8 @@ import Recipes from "./pages/recipes/index";
 import bars from "./pages/bars/index";
 import breweries from "./pages/breweries/index";
 import Footer from "./component/footer/footer";
-// import Register from "./auth/register.js";
-// import Login from "./auth/login.js";
+//import Register from "./auth/register.js";
+//import Login from "./auth/login.js";
 
 //Check for token to keep user logged in
 if (localStorage.jwtToken) {
