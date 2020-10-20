@@ -18,9 +18,10 @@
 
 /* .nav-wrapper.a {
   font-size: x-large;
-} */
+ } */
 
 .main-content {
+  padding-top: 30px;
   margin-top: 30px;
   margin-bottom: 30px;
 }
@@ -106,8 +107,16 @@ a:hover {
 }
 
 .recipe-button {
+  width: 90%;
+  padding: 10, 5, 10, 5;
+  font-family: BenchNine, serif;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.recipe-search-button {
   width: 100%;
-  padding: 10, 5, 10, 5; 
+  padding: 10, 5, 10, 5;
   font-family: BenchNine, serif;
   font-size: 20px;
   margin-bottom: 30px;
@@ -126,8 +135,10 @@ a:hover {
 }
 
 .bottle-image {
-  width: 100%;
-  max-height: 100%;
+  width: 70%;
+  max-height: 75%;
+  margin: auto;
+  align-content: center;
 }
 
 .button {
@@ -151,6 +162,16 @@ p {
   color: rgb(75, 75, 75);
 }
 
+.recipe-header {
+  font-family: BenchNine, sans-serif;
+  font-size: 40px;
+}
+
+.brewery-header {
+  font-family: BenchNine, sans-serif;
+  font-size: 40px;
+}
+
 h1 {
   font-family: BenchNine, sans-serif;
   font-size: large;
@@ -163,7 +184,7 @@ h2 {
 
 .h3 {
   font-family: BenchNine, sans-serif;
-  color:#039be5;
+  color: #039be5;
   margin-top: 0px;
   top: 0px;
 }
