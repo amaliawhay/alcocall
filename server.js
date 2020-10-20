@@ -26,6 +26,7 @@ require("dotenv").config();
 //===========================================================
 
 app.use(compression());
+app.use(cors())
 
 // Middlewares defined here
 app.use(express.urlencoded({ extended: true }));
@@ -44,10 +45,21 @@ require("./config/passport")(passport);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+//enable cors configuration
+// var whitelist = ['https://www.thecocktaildb.com', 'https://limitless-fortress-81877.herokuapp.com']
+// var corsOptions = {
+//   origin: function (origin, callback) {
+//     if (whitelist.indexOf(origin) !== -1) {
+//       callback(null, true)
 
 //Routes
 //app.use("/", routes);
 app.use("/api/users", users);
+app.get("*", (req, res) => {
+  res.sendFile(
+    path.join(__dirname + "/client/build/index.html")
+  );
+});
 
 // Connect to MongoDB
 mongoose
@@ -56,6 +68,9 @@ mongoose
       "mongodb://localhost/alcocalldb",
     {
       useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false,
     }
   )
   .then(() =>

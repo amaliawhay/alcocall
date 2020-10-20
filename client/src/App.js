@@ -36,7 +36,7 @@ import Footer from "./component/footer/footer";
 if (localStorage.jwtToken) {
   //Set auth token header auth
   const token = localStorage.jwtToken;
-  setAuthToken(token);
+  // setAuthToken(token);
   //Decode token & get user info
   const decoded = jwt_decode(token);
   //set user & isAuthenticated
@@ -68,9 +68,19 @@ function App() {
           />
           <Route exact path="/login" component={Login} />
           <Route exact path="/index" component={home} />
-          <Route exact path="/bars" component={bars} />
-          <Route path="/breweries" component={breweries} />
-          <Route path="/recipes" component={Recipes} />
+          <PrivateRoute
+            exact
+            path="/bars"
+            component={bars}
+          />
+          <PrivateRoute
+            path="/breweries"
+            component={breweries}
+          />
+          <PrivateRoute
+            path="/recipes"
+            component={Recipes}
+          />
           <Route
             path="/references"
             component={references}

@@ -48,11 +48,12 @@ searchNonAlcoholic = () => {
 }
   searchRandom = () =>  {
     API.getRandom().then((res) => {
+      console.log(res)
       // localStorage.clear();
       // localStorage.removeItem("searchedFor");
       var ing = [];
       
-      // console.log(res.data.drinks[0]);
+      console.log(res.data.drinks[0]);
       for (let i = 1; i < 16; i++){
         if (res.data.drinks[0]['strIngredient' + [i]] === null && res.data.drinks[0]['strMeasure' + [i]] === null) {
         }else if (res.data.drinks[0]['strMeasure' + [i]] === null){

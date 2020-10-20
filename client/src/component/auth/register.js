@@ -3,7 +3,6 @@ import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../app/actions/authActions";
-//import { userNameInput } from "./authObjs";
 import classnames from "classnames";
 
 class Register extends Component {
@@ -12,7 +11,7 @@ class Register extends Component {
     this.state = {
       userName: "",
       password: "",
-      //password2: "",
+      //TODO: set up password confirmation: password2: "",
       age: "",
       errors: {},
     };
@@ -45,7 +44,7 @@ class Register extends Component {
     const newUser = {
       userName: this.state.userName,
       password: this.state.password,
-      //password2: this.state.password2,
+      //TODO: set up password confirmation: password2: this.state.password2,
       age: this.state.age,
     };
 
