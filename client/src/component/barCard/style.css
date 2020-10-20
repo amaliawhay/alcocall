@@ -21,6 +21,7 @@
 } */
 
 .main-content {
+  padding-top: 30px;
   margin-top: 30px;
   margin-bottom: 30px;
 }
@@ -106,6 +107,14 @@ a:hover {
 }
 
 .recipe-button {
+  width: 90%;
+  padding: 10, 5, 10, 5; 
+  font-family: BenchNine, serif;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.recipe-search-button {
   width: 100%;
   padding: 10, 5, 10, 5; 
   font-family: BenchNine, serif;
@@ -126,8 +135,10 @@ a:hover {
 }
 
 .bottle-image {
-  width: 100%;
-  max-height: 100%;
+  width: 70%;
+  max-height: 75%;
+  margin: auto;
+  align-content: center;
 }
 
 .button {
@@ -154,7 +165,12 @@ p {
 .recipe-header {
   font-family: BenchNine, sans-serif;
   font-size: 40px;
-  margin-top: 40px;
+  
+}
+
+.brewery-header {
+  font-family: BenchNine, sans-serif;
+  font-size: 40px;
   
 }
 

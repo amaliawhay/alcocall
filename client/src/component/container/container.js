@@ -4,8 +4,8 @@ function container() {
     <div>
       <div className="row">
         <div className="col s12">
-          <section className="main-text-section">
-          </section>
+          {/* <section className="main-text-section">
+          </section> */}
         </div>
       </div>
     </div>

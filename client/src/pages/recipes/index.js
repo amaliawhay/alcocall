@@ -191,18 +191,18 @@ searchNonAlcoholic = () => {
     return (
       <div>
         <main className="container main-content">
-                <Row>
-                  <Col className="s4 m4 l4">
-                  <h2 className="center-align recipe-header
+              <Row>
+                  <Col >
+                  <h2 className="center-align responsive-text recipe-header
                    light-blue-text text-darken-1">
                   Click a Spirit, enter an ingredient you have in your bar, or Both!</h2>
                   </Col>
                 
-                </Row>
+              </Row>
               
 
               <Row>
-                <Col s={12} m={3} l={3}>
+                <Col className="center-align" s={12} m={3} l={3}>
                   <img className="bottle-image" src="./assets/images/vodka_bottle.jpg"></img>
                 <DrinkButton
                     onClick={this.handleButtonClick}
@@ -212,7 +212,7 @@ searchNonAlcoholic = () => {
                     Vodka
                   </DrinkButton>                              
                 </Col>
-                <Col s={12} m={3} l={3}>
+                <Col className="center-align" s={12} m={3} l={3}>
                   <img className="bottle-image responsive-img" src="./assets/images/rum_bottle.jpg"></img>
                 <DrinkButton
                     onClick={this.handleButtonClick}
@@ -222,7 +222,7 @@ searchNonAlcoholic = () => {
                     Rum
                   </DrinkButton>
                 </Col>
-                <Col s={12} m={3} l={3}>
+                <Col className="center-align" s={12} m={3} l={3}>
                 <img className="bottle-image" src="./assets/images/whiskey_bottle.jpg"></img>              
                 <DrinkButton
                     onClick={this.handleButtonClick}
@@ -231,7 +231,7 @@ searchNonAlcoholic = () => {
                   >
                     Whiskey
                   </DrinkButton></Col>
-                <Col s={12} m={3} l={3}>
+                <Col className="center-align" s={12} m={3} l={3}>
                 <img className="bottle-image" src="./assets/images/gin_bottle.jpg"></img>   
                 <DrinkButton
                     onClick={this.handleButtonClick}
@@ -244,7 +244,7 @@ searchNonAlcoholic = () => {
 
               </Row>
               <Row>
-                <Col s={12} m={3} l={3}>
+                <Col className="center-align" s={12} m={3} l={3}>
                 <img className="bottle-image" src="./assets/images/tequila_bottle.jpg"></img>
                 <DrinkButton
                     onClick={(event) => this.handleButtonClick(event)}
@@ -255,7 +255,7 @@ searchNonAlcoholic = () => {
                   </DrinkButton>
                 </Col>
                 
-                <Col s={12} m={3} l={3}>
+                <Col className="center-align" s={12} m={3} l={3}>
                 <img className="bottle-image" src="./assets/images/bourbon_bottle.jpg"></img>
                 <DrinkButton
                     onClick={this.handleButtonClick}
@@ -265,7 +265,7 @@ searchNonAlcoholic = () => {
                     Bourbon
                   </DrinkButton>
                 </Col>
-                <Col s={12} m={3} l={3}>
+                <Col className="center-align" s={12} m={3} l={3}>
                 <img className="bottle-image" src="./assets/images/non_alcohol.jpg"></img>
                 <DrinkButton
                     onClick={this.handleNonAlcoholicButton}
@@ -275,7 +275,7 @@ searchNonAlcoholic = () => {
                     Non-Alcoholic
                   </DrinkButton>
                 </Col>
-                <Col s={12} m={3} l={3}>
+                <Col className="center-align" s={12} m={3} l={3}>
                 <img className="bottle-image" src="./assets/images/random_drink.jpg"></img>
                 <DrinkButton
                     onClick={this.handleRandomButtonClick}
@@ -306,7 +306,7 @@ searchNonAlcoholic = () => {
                 
               
               <Button
-              className="recipe-button btn light-blue darken-1 btn:hover drink-wrapper-buttons valign-wrapper"
+              className="recipe-search-button btn light-blue darken-1 btn:hover drink-wrapper-buttons valign-wrapper"
               onClick={(event) => this.handleFormSubmit(event)}
               >
                 Search

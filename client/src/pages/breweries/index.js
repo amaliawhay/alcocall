@@ -5,7 +5,7 @@ function breweries() {
     <main className="container main-content">
      <div className="col s12 l6">
       <div className="card card-content">
-        <h4 className="h4 card-content light-blue-text text-darken-1">Enter a city name to find the closest brewery near you.</h4>
+        <h4 className="brewery-header card-content light-blue-text text-darken-1">Enter a city name to find the closest brewery near you.</h4>
           <form className="row card-content">
            <div className="input-field col s12 l9">
             <input id="firstName" class="validate" placeholder="City Name" type="text"></input>

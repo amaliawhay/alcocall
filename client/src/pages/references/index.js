@@ -5,7 +5,7 @@ function references() {
   return (
     <div>
       <main className="container main-content">
-        <h4 className="h4">Want to continue your Alcoholic Education?</h4>
+        <h4 className="brewery-header">Want to continue your Alcoholic Education?</h4>
         <h5 className="light-blue-text text-darken-1">
           Here are some outside resources...
         </h5>
