@@ -28,15 +28,19 @@ function Navbar1() {
           onOpenEnd: null,
           onOpenStart: null,
           outDuration: 200,
-          preventScrolling: true
+          preventScrolling: true,
         }}
       >
         <NavItem href="recipes">Recipes</NavItem>
         <NavItem href="breweries">Breweries</NavItem>
         <NavItem href="bars">Bars</NavItem>
         <NavItem href="references">Resources</NavItem>
-        <NavItem href="signin" className="btn-floating light-blue darken-1 zed-depth-0" alt="Login">
-        <i className="material-icons">person</i>
+        <NavItem
+          href="dashboard"
+          className="btn-floating light-blue darken-1 zed-depth-0"
+          alt="Login"
+        >
+          <i className="material-icons">person</i>
         </NavItem>
       </Navbar>
     </div>

@@ -68,9 +68,19 @@ function App() {
           />
           <Route exact path="/login" component={Login} />
           <Route exact path="/index" component={home} />
-          <Route exact path="/bars" component={bars} />
-          <Route path="/breweries" component={breweries} />
-          <Route path="/recipes" component={Recipes} />
+          <PrivateRoute
+            exact
+            path="/bars"
+            component={bars}
+          />
+          <PrivateRoute
+            path="/breweries"
+            component={breweries}
+          />
+          <PrivateRoute
+            path="/recipes"
+            component={Recipes}
+          />
           <Route
             path="/references"
             component={references}
