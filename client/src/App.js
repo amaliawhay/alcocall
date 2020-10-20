@@ -36,7 +36,7 @@ import Footer from "./component/footer/footer";
 if (localStorage.jwtToken) {
   //Set auth token header auth
   const token = localStorage.jwtToken;
-  setAuthToken(token);
+  // setAuthToken(token);
   //Decode token & get user info
   const decoded = jwt_decode(token);
   //set user & isAuthenticated
