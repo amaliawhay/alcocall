@@ -46,6 +46,9 @@ mongoose
       "mongodb://localhost/alcocalldb",
     {
       useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false,
     }
   )
   .then(() =>
