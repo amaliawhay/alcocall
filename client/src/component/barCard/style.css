@@ -151,6 +151,13 @@ p {
   color: rgb(75, 75, 75);
 }
 
+.recipe-header {
+  font-family: BenchNine, sans-serif;
+  font-size: 40px;
+  margin-top: 40px;
+  
+}
+
 h1 {
   font-family: BenchNine, sans-serif;
   font-size: large;

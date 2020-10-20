@@ -192,10 +192,10 @@ searchNonAlcoholic = () => {
       <div>
         <main className="container main-content">
                 <Row>
-                  <Col className="push-s4 push-m4 push-l4">
-                  <h2 className="center-align light-blue-text text-darken-1">
-                Click a Spirit, enter an ingredient you have in your bar, or Both!
-              </h2>
+                  <Col className="s4 m4 l4">
+                  <h2 className="center-align recipe-header
+                   light-blue-text text-darken-1">
+                  Click a Spirit, enter an ingredient you have in your bar, or Both!</h2>
                   </Col>
                 
                 </Row>
@@ -292,7 +292,7 @@ searchNonAlcoholic = () => {
             <Row>
               
               <Col 
-              className="left-align push-s3 push-m3 push-l3"
+              className="s3 m3 l3"
               s={6} m={6} l={6}>
               
                 <TextInput 
@@ -306,14 +306,14 @@ searchNonAlcoholic = () => {
                 
               
               <Button
-              className="recipe-button btn light-blue darken-1 btn:hover pulse drink-wrapper-buttons valign-wrapper"
+              className="recipe-button btn light-blue darken-1 btn:hover drink-wrapper-buttons valign-wrapper"
               onClick={(event) => this.handleFormSubmit(event)}
               >
                 Search
                 </Button>
 
                 <Button
-              className="btn light-blue darken-1 btn:hover pulse drink-wrapper-buttons valign-wrapper"
+              className="btn light-blue darken-1 btn:hover pulse drink-wrapper-buttons valign-wrapper main-text"
               onClick={(event) => this.clearLocal(event)}
               >
                 Clear Search
