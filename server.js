@@ -37,6 +37,12 @@ require("./config/passport")(passport);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+//enable cors configuration
+// var whitelist = ['https://www.thecocktaildb.com', 'https://limitless-fortress-81877.herokuapp.com']
+// var corsOptions = {
+//   origin: function (origin, callback) {
+//     if (whitelist.indexOf(origin) !== -1) {
+//       callback(null, true)
 
 //Routes
 //app.use("/", routes);
