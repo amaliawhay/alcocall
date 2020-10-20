@@ -4,6 +4,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
+var cors = require("cors")
 
 const users = require("./routes/api/users");
 
@@ -14,6 +15,15 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 require("dotenv").config();
+//======================================================
+// app.use(cors())
+
+// app.get('/products/:id', function (req, res, next) {
+//   res.json({msg: 'This is CORS-enabled for all origins!'})
+// })
+
+
+//===========================================================
 
 app.use(compression());
 
@@ -54,6 +64,6 @@ mongoose
   .catch((err) => console.log(err));
 
 //Start server
-app.listen(PORT, function () {
+app.listen( PORT, function () {
   console.log(`App now listening at localhost: ${PORT}`);
 });

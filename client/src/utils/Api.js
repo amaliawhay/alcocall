@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 export default {
   getNonAlcohol: function () {
     return axios.get(
