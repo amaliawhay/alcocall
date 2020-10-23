@@ -24,7 +24,7 @@ function breweries() {
         <h4 className="center-align light-blue-text text-darken-1">Please Drink Responsibly!</h4>
         <p className="center-align">
           Have you already started drinking? Call a rideshare app or a friend to
-          take you on the next journey of your adventure!
+          take you on the next journey of your adventure! change
         </p>
       </div>
     </main>  
