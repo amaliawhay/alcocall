@@ -9,7 +9,7 @@ function home() {
   return (
     <div>
       <Jumbo />
-      <Container />
+      {/* <Container /> */}
       <RandomCard />
       <BreweryCard />
       <BarCard />

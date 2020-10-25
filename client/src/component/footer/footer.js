@@ -43,11 +43,6 @@ function footer() {
                     Resources
                   </Link>
                 </li>
-                <li>
-                  <Link className="footer-a" to="signin" alt="Login/Sign up">
-                    Login
-                  </Link>
-                </li>
               </ul>
             </div>
           </div>
