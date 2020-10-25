@@ -203,6 +203,11 @@ h5 {
   font-weight: bold;
 }
 
+.age-label {
+  font-family: BenchNine, sans-serif;
+  color:rgb(145, 145, 145);
+}
+
 .drink-wrapper {
   padding-top: 20px;
 }
