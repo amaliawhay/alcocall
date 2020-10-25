@@ -3,7 +3,7 @@ import { Card, CardTitle, Icon } from "react-materialize";
 
 function DrinkCard(props) {
   return (
-    <div>
+    <div className="wide-container">
      
           <Card
             closeIcon={<Icon>close</Icon>}

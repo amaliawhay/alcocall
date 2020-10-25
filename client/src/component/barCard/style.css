@@ -5,6 +5,9 @@
   padding: 0;
   font-family: BenchNine, sans-serif;
   font-size: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-bar {
@@ -27,6 +30,7 @@
 
 .wide-container {
   width: 90%;
+  justify-content: center;
 }
 
 .carousel-container {
