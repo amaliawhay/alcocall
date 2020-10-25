@@ -8,7 +8,7 @@ function DrinkButton({ type = "default", className, children, onClick }) {
       id={children}
       onClick={onClick}
       className={[
-        "btn light-blue darken-1 btn:hover pulse drink-wrapper-buttons",
+        "btn light-blue darken-1 btn:hover drink-wrapper-buttons",
         `btn-${type}`,
         className
       ].join(" ")}

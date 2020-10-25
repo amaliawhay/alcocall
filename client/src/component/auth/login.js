@@ -51,10 +51,10 @@ class Login extends Component {
     const { errors } = this.state;
     return (
       <div className="container">
-        <div style={{ marginTop: "4rem" }} className="row">
-          <div className="col s8 offset-s2">
+        <div className="row login-content">
+          <div className="col s8">
             <Link to="/" className="btn-flat waves-effect">
-              <i className="material-icons left">
+              <i className="material-icons left link-color">
                 keyboard_backspace
               </i>{" "}
               Back to home
@@ -63,12 +63,12 @@ class Login extends Component {
               className="col s12"
               style={{ paddingLeft: "11.250px" }}
             >
-              <h4>
-                <b>Login</b> below
-              </h4>
+              <h2>
+                Login Below
+              </h2>
               <p className="grey-text text-darken-1">
                 Don't have an account?{" "}
-                <Link to="/register">Register</Link>
+                <Link className="register-link" to="/register">Register Here</Link>
               </p>
             </div>
             <form noValidate onSubmit={this.onSubmit}>
@@ -85,7 +85,7 @@ class Login extends Component {
                       errors.userNamenotfound,
                   })}
                 />
-                <label htmlFor="userName">Username</label>
+                <label className="button" htmlFor="userName">Username</label>
                 <span className="red-text">
                   {errors.userName}
                   {errors.userNamenotfound}
@@ -104,9 +104,8 @@ class Login extends Component {
                       errors.passwordincorrect,
                   })}
                 />
-                <label htmlFor="password">Password</label>
-              </div>
-              <div
+                <label className="button" htmlFor="password">Password</label>
+                <div
                 className="col s12"
                 style={{ paddingLeft: "11.250px" }}
               >
@@ -118,10 +117,11 @@ class Login extends Component {
                     marginTop: "1rem",
                   }}
                   type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                  className="btn light-blue darken-1 card-buttons"
                 >
                   Login
                 </button>
+              </div>
               </div>
             </form>
           </div>
