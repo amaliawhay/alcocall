@@ -52,7 +52,7 @@ class Login extends Component {
     return (
       <div className="container">
         <div className="row login-content">
-          <div className="col s8">
+          <div className="col s12 m8 l8">
             <Link to="/" className="btn-flat waves-effect">
               <i className="material-icons left link-color">
                 keyboard_backspace
@@ -106,14 +106,14 @@ class Login extends Component {
                 />
                 <label className="button" htmlFor="password">Password</label>
                 <div
-                className="col s12"
+                className="col s12 m4 l4"
                 style={{ paddingLeft: "11.250px" }}
               >
                 <button
                   style={{
                     width: "150px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px",
+                    // borderRadius: "3px",
+                    // letterSpacing: "1.5px",
                     marginTop: "1rem",
                   }}
                   type="submit"
