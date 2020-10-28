@@ -35,6 +35,11 @@ function footer() {
                     Yulin Karaiscos
                   </Link>
                 </li>
+                <li>
+                  <Link className="footer-a" to="https://github.com/Darling-bee" alt="Bar Search">
+                    Brianne Tengwall
+                  </Link>
+                </li>
               </ul>
             </div>
             <div className="col l4 offset-l2 s12">
