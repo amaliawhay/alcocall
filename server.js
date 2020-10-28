@@ -38,6 +38,11 @@ if (process.env.NODE_ENV === "production") {
 //Routes
 //app.use("/", routes);
 app.use("/api/users", users);
+app.get("*", (req, res) => {
+  res.sendFile(
+    path.join(__dirname + "/client/build/index.html")
+  );
+});
 
 // Connect to MongoDB
 mongoose
@@ -46,6 +51,9 @@ mongoose
       "mongodb://localhost/alcocalldb",
     {
       useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false,
     }
   )
   .then(() =>

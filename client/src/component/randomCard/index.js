@@ -3,12 +3,12 @@ import { Icon, Row, CardTitle, Col, Card } from "react-materialize";
 
 function RandomCard() {
   return (
-    <div>
+    <div className="container">
       <Row>
         <Col m={12} s={12}>
           <Card
             actions={[
-              <a className="btn light-blue darken-1 card-buttons " key="1" href="recipes">
+              <a className="btn light-blue darken-1 card-buttons" key="1" href="recipes">
                 Find a drink
               </a>
             ]}

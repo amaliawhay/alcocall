@@ -3,7 +3,6 @@ import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../app/actions/authActions";
-//import { userNameInput } from "./authObjs";
 import classnames from "classnames";
 
 class Register extends Component {
@@ -12,7 +11,7 @@ class Register extends Component {
     this.state = {
       userName: "",
       password: "",
-      //password2: "",
+      //TODO: set up password confirmation: password2: "",
       age: "",
       errors: {},
     };
@@ -45,7 +44,7 @@ class Register extends Component {
     const newUser = {
       userName: this.state.userName,
       password: this.state.password,
-      //password2: this.state.password2,
+      //TODO: set up password confirmation: password2: this.state.password2,
       age: this.state.age,
     };
 
@@ -58,10 +57,10 @@ class Register extends Component {
 
     return (
       <div className="container">
-        <div className="row">
-          <div className="col s8 offset-s2">
+        <div className="row login-content">
+          <div className="col s8">
             <Link to="/" className="btn-flat waves-effect">
-              <i className="material-icons left">
+              <i className="material-icons left link-color">
                 keyboard_backspace
               </i>{" "}
               Back to home
@@ -70,12 +69,12 @@ class Register extends Component {
               className="col s12"
               style={{ paddingLeft: "11.250px" }}
             >
-              <h4>
-                <b>Register</b> below
-              </h4>
+              <h2>
+                Register Below
+              </h2>
               <p className="grey-text text-darken-1">
                 Already have an account?{" "}
-                <Link to="/login">Login</Link>
+                <Link className="register-link" to="/login">Login Here</Link>
               </p>
             </div>
             <form noValidate onSubmit={this.onSubmit}>
@@ -90,7 +89,7 @@ class Register extends Component {
                     invalid: errors.userName,
                   })}
                 />
-                <label htmlFor="userName">Username</label>
+                <label className="button" htmlFor="userName">Username</label>
                 <span className="red-text">
                   {errors.userName}
                 </span>
@@ -107,14 +106,14 @@ class Register extends Component {
                     invalid: errors.password,
                   })}
                 />
-                <label htmlFor="password">Password</label>
+                <label className="button" htmlFor="password">Password</label>
                 <span className="red-text">
                   {errors.password}
                 </span>
               </div>
 
               <div className="input-field col s12">
-                <h6>Please enter your age</h6>
+                <h6 className="age-label">Please enter your age</h6>
                 <input
                   onChange={this.onChange}
                   value={this.state.age}
@@ -128,25 +127,24 @@ class Register extends Component {
                 <span className="red-text">
                   {errors.age}
                 </span>
-              </div>
-
-              <div
+                <div
                 className="col s12"
                 style={{ paddingLeft: "11.250px" }}
               >
                 <button
                   style={{
                     width: "150px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px",
+                    // borderRadius: "3px",
+                    // letterSpacing: "1.5px",
                     marginTop: "1rem",
                   }}
                   type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                  className="btn light-blue darken-1 card-buttons"
                 >
                   Sign up
                 </button>
               </div>
+              </div> 
             </form>
           </div>
         </div>
