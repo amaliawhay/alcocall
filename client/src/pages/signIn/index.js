@@ -10,7 +10,7 @@ class signIn extends Component {
       >
         <div className="row">
           <div className="col s12 center-align">
-            <h4>Alcocall.</h4>
+            <h4>Alcocall</h4>
             <p className="flow-text grey-text text-darken-1">
               The virtual bartender app that uses what
               you've got!
