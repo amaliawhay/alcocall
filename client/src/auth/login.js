@@ -18,7 +18,7 @@ const userData = {
       email: this.state.email,
       password: this.state.password
     };
-// console.log(userData);
+console.log(userData);
   };
 render() {
     const { errors } = this.state;
