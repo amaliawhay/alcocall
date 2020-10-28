@@ -24,7 +24,7 @@ class Login extends Component {
 
   UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
-      this.props.history.push("/dashboard"); //push user to home page when they login
+      this.props.history.push("/index"); //push user to home page when they login
     }
 
     if (nextProps.errors) {
