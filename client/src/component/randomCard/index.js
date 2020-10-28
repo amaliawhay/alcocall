@@ -3,7 +3,7 @@ import { Icon, Row, CardTitle, Col, Card } from "react-materialize";
 
 function RandomCard() {
   return (
-    <div>
+    <div className="container">
       <Row>
         <Col m={12} s={12}>
           <Card

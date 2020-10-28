@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function BarCard() {
   return (
-    <div>
+    <div className="container">
       <Row>
         <Col m={12} s={12}>
           <Card 
