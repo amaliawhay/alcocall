@@ -23,10 +23,8 @@ function Jumbo() {
         // ]}
         images={imagesProps}
         options={{
-          autoPlay: true,
           fullWidth: true,
-          indicators: true,
-          interval: 400
+          indicators: true
         }}
       />
     </div>
