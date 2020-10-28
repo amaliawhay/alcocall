@@ -77,7 +77,7 @@ function App() {
             path="/breweries"
             component={breweries}
           />
-          <PrivateRoute
+          <Route
             path="/recipes"
             component={Recipes}
           />
