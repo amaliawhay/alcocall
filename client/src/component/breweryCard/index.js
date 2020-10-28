@@ -3,7 +3,7 @@ import { Icon, Row, CardTitle, Col, Card } from "react-materialize";
 
 function breweryCard() {
   return (
-    <div>
+    <div className="container">
       <Row>
         <Col m={12} s={12}>
           <Card
@@ -20,7 +20,7 @@ function breweryCard() {
             revealIcon={<Icon>more_vert</Icon>}
           >
             <h3 className="h3">Need a beer, brewski, cold one, ale or whatever else you want to call it?</h3>
-          <h5>Craft beer is a trend that has swept the nation. IPA, hazy, juicy, session or saison? Whatever it is, find it locally, make it unique, and seek it here.  Craft Breweries are a trend to some, and a lifestyle for others. Find all your local breweries and tasting rooms for the next time you need a local hazy, juicy, double IPA.</h5>
+            <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
           </Card>
         </Col>
       </Row>
