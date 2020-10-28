@@ -5,6 +5,9 @@
   padding: 0;
   font-family: BenchNine, sans-serif;
   font-size: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-bar {
@@ -18,7 +21,7 @@
 
 /* .nav-wrapper.a {
   font-size: x-large;
- } */
+} */
 
 .main-content {
   padding-top: 30px;
@@ -26,8 +29,18 @@
   margin-bottom: 30px;
 }
 
+.login-content {
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .wide-container {
   width: 90%;
+  justify-content: center;
 }
 
 .carousel-container {
@@ -146,6 +159,12 @@ a:hover {
   font-size: 16px;
 }
 
+.register-link {
+  font-family: BenchNine, serif;
+  font-size: 22px;
+  color: #039be5;
+}
+
 .btn {
   font-size: 30px;
 }
@@ -180,6 +199,7 @@ h1 {
 h2 {
   font-family: BenchNine, sans-serif;
   font-size: large;
+  color: #039be5;
 }
 
 .h3 {
@@ -202,6 +222,11 @@ h5 {
   font-family: BenchNine, sans-serif;
   color: rgb(75, 75, 75);
   font-weight: bold;
+}
+
+.age-label {
+  font-family: BenchNine, sans-serif;
+  color: rgb(145, 145, 145);
 }
 
 .drink-wrapper {
@@ -288,4 +313,8 @@ h5 {
 
 .card-content {
   font-family: BenchNine, sans-serif;
+}
+
+.link-color {
+  color: #039be5;
 }
