@@ -15,6 +15,33 @@ function footer() {
                 Your virtual bartender.
               </p>
             </div>
+            <div className="col l6 s12">
+              <h5 className="light-blue-text text-darken-1">
+                The Coding Commanders
+              </h5>
+              <ul>
+                <li>
+                  <Link className="footer-a" to="https://github.com/amaliawhay" alt="Home">
+                    Amalia Hay
+                  </Link>
+                </li>
+                <li>
+                  <Link className="footer-a" to="https://github.com/imartinez0753" alt="Recipes">
+                    Ian Martinez
+                  </Link>
+                </li>
+                <li>
+                  <Link className="footer-a" to="https://github.com/KarazKOS" alt="Bar Search">
+                    Yulin Karaiscos
+                  </Link>
+                </li>
+                <li>
+                  <Link className="footer-a" to="https://github.com/Darling-bee" alt="Bar Search">
+                    Brianne Tengwall
+                  </Link>
+                </li>
+              </ul>
+            </div>
             <div className="col l4 offset-l2 s12">
               <h5 className="light-blue-text text-darken-1">Links</h5>
               <ul>
@@ -41,11 +68,6 @@ function footer() {
                 <li>
                   <Link className="footer-a" to="references" alt="Resources">
                     Resources
-                  </Link>
-                </li>
-                <li>
-                  <Link className="footer-a" to="signin" alt="Login/Sign up">
-                    Login
                   </Link>
                 </li>
               </ul>
