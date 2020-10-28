@@ -43,7 +43,7 @@ class signIn extends Component {
               </Link>
             </div>
           </div>
-        </div>
+        </div>  
       </div>
     );
   }
