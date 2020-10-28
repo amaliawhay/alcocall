@@ -4,7 +4,7 @@ import { Row, Col, Card, Button } from "react-materialize";
 import TextInput from "../../component/textInput/textInput";
 import DrinkCard from "../../component/drinkCard/drinkCard";
 import DrinkButton from "../../component/button/button";
-import textInput from "../../component/textInput/textInput";
+
  
 var searchedIng = JSON.parse(localStorage.getItem("searchedFor")) || [];
 var inputSearch = [];

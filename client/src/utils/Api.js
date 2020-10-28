@@ -27,5 +27,10 @@ export default {
     return axios.get(
       `https://www.thecocktaildb.com/api/json/${process.env.REACT_APP_COCKTAILS_API_KEY}/filter.php?i=${ing}`
     );
+  },
+  getBrewery: function (cityName) {
+    return axios.get(
+      `https://api.openbrewerydb.org/breweries?by_city=${cityName}`
+    );
   }
 };
