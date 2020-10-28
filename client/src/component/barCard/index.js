@@ -32,7 +32,7 @@ function BarCard() {
             revealIcon={<Icon className="material-icons">local_bar</Icon>}
           >
             <h3 className="h3">Ready to get out of the house? Quaranteen, shaurmanteen... I need a drink!</h3>
-            <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
+            <h5>Some people prefer to leave the mixing to the professionals. Some people prefer to not drink alone. All of those people should click here to find a local expert mixology establishment. </h5>
           </Card>
         </Col>
       </Row>
