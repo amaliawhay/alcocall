@@ -19,8 +19,8 @@ function RandomCard() {
             horizontal
             revealIcon={<Icon>more_vert</Icon>}
           >
-            <h3 className="h3">Need a beer, brewski, cold one, ale or whatever else you want to call it?</h3>
-            <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
+            <h3 className="h3">Tired of your 'Usual?' Trying to impress your Tinder date? Try a New Drink Recipe. </h3>
+            <h5>DID YOU GET YOU TINDER DATE HOME FOR A NIGHTCAP AND NOW YOU DON'T KNOW WHAT TO DO??  We got you.</h5>
           </Card>
         </Col>
       </Row>
