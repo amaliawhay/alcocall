@@ -75,7 +75,7 @@ this.setState({ ...this.state, results: data });
          {this.state.results.map((name) => {
            return(
             <ul>
-              <li>
+              <li className="center-align light-blue-text text-darken-1">
               {name.name}
               </li>           
             </ul>
