@@ -13,7 +13,7 @@ function bars() {
             </a>
           </div>
           <div className="card-content">
-            <h4 className="center-align h4 light-blue-text text-darken-1">Bar Locater</h4>
+            <h4 className="center-align h4 light-blue-text text-darken-1">Bar Locator</h4>
             <p className="center-align">Get Bar Hopping!</p>
           </div>
           <div className="card-action center-align">
