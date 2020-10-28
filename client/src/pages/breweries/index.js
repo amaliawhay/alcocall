@@ -1,23 +1,87 @@
-import React from "react";
- 
-function breweries() {
+
+import API from "../../utils/Api";
+import {  Button } from "react-materialize";
+import React, { Component } from "react";
+import TextInput from "../../component/textInput/textInput";
+
+class breweries extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      search: "",
+      results: []      
+    };
+  }
+  handleButtonCLick = (event) => {
+    event.preventDefault();
+    this.findBrewery(this.state.search)
+    
+  }
+
+
+ findBrewery = (query) => {
+API.getBrewery(query).then((res) => {
+console.log(res)
+console.log(res.data)
+const data = res.data;
+this.setState({ ...this.state, results: data });
+    console.log(this.state.results)
+
+}).catch((err) => console.log(err));
+ }
+
+ handleFormSubmit = (event) => {
+
+  this.findBrewery(this.state.search)
+ }
+
+ handleInputChange = (event) => {
+  const value = event.target.value;
+ console.log(event.target.value)
+  this.setState({
+    ...this.state,
+    search: value
+  });
+};
+
+
+ render() {
  return (
-   <main className="container main-content">
+   <div>
+<main className="container main-content">
     <div className="col s12 l6">
      <div className="card card-content">
        <h4 className="brewery-header card-content light-blue-text text-darken-1">Enter a city name to find the closest brewery near you.</h4>
          <form className="row card-content">
           <div className="input-field col s12 l9">
-           <input id="firstName" class="validate" placeholder="City Name" type="text"></input>
+          <TextInput
+               className="valign-wrapper"
+                 id="TextInput"
+                
+                 value={this.state.search}
+                 handleInputChange={this.handleInputChange}
+                 handleFormSubmit={(event) => this.handleFormSubmit(event)}
+                 
+               />
            <label className="active label-city" htmlFor="city_name">
              City Name
            </label>
            </div>
          </form>
          <div className="card-action center-align">
-         <a id="button" class="btn light-blue darken-1 card-buttons">Find Local Beer!</a>
+         <Button onClick={this.handleButtonCLick} id="button" class="btn light-blue darken-1 card-buttons">Find Local Beer!</Button>
          </div>
          <div id="brewery"></div>
+         {this.state.results.map((name) => {
+           return(
+            <ul>
+              <li className="center-align light-blue-text text-darken-1">
+              {name.name}
+              </li>           
+            </ul>
+           )
+          })}
+         
      </div>   
      </div>
      <div className="">
@@ -28,7 +92,11 @@ function breweries() {
        </p>
      </div>
    </main> 
+
+   </div>
+   
  );
+}
 }
 export default breweries;
  
