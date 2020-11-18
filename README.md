@@ -1,68 +1,43 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# Alcocall
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+The Alcocall App is a virtual bartender that allows users to look up recipes for cocktails by selecting their liquor of choice.
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Visit Site
+https://imartinez0753.github.io/alcoCall/
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Table of Contents
 
-### `npm test`
+1. [Usage](##Usage)
+1. [License](##License)
+1. [Credits](##Credits)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
 
-### `npm run build`
+Users must verify that they are over the age of 21 before using the site and create a username and password.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+User's can filter through cocktail recipes by selecting their preferred alcohol type. Selecting a recipe will provide them with a list of ingredients and instructions on how to make each drink.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Users can also request for the app to select a cocktail at random for them. Just clicking the random drink button provides the user with a list of ingredients and instructions.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+If the user decides that making their own drink is too much work, we have provided a few outlets for them to find a bar or brewery.
 
-### `npm run eject`
+If the user clicks on the map on the homepage, they will be directed to google maps, where they can search for bars in their area. The user can also click on the brewery link in the navigation page. This will take them to a search page where they can enter a city and see a list of breweries for that area.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## License
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+© 2020, All rights reserved: AlcoCALL by The Coding Commanders
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- ## Credits
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Contributers:
+_[Yulin Karaiscos](https://github.com/KarazKOS)
+_[Ian Martinez](https://github.com/imartinez0753)
+_[Amalia Hay](https://github.com/amaliawhay)
+_[Brianne Tengwall](https://github.com/Darling-bee)
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+API's used:
+_[The Cocktail DB](https://www.thecocktaildb.com/api.php)
+_[Open Breweries DB](https://www.openbrewerydb.org/)
