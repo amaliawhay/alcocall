@@ -6,7 +6,7 @@ The Alcocall App is a virtual bartender that allows users to look up recipes for
 
 
 ## Visit Site
-https://imartinez0753.github.io/alcoCall/
+https://alcocall.herokuapp.com/
 
 ## Table of Contents
 
